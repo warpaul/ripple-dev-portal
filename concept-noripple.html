@@ -1,237 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
-
-    <title>Understanding the NoRipple flag - Ripple Developer Portal</title>
-
-    <!-- favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- jQuery -->
-    <script src="assets/vendor/jquery-1.11.1.min.js"></script>
-    
-    <!-- Custom Stylesheets. ripple.css includes bootstrap, font stuff -->
-    <link href="assets/css/ripple.css" rel="stylesheet" />
-    <link href="assets/css/devportal.css" rel="stylesheet" />
-
-    <!-- Bootstrap JS -->
-    <script src="assets/vendor/bootstrap.min.js"></script>
-
-
-    <!-- syntax highlighting -->
-    <link rel="stylesheet" href="assets/vendor/docco.min.css">
-    <script src="assets/vendor/highlight.min.js"></script>
-
-    <!-- syntax selection js -->
-    <script src="assets/js/multicodetab.js"></script>
-    <script>
-        $(document).ready(function() {
-            $().multicode_tabs();
-            hljs.initHighlighting();
-            make_code_expandable();
-        });
-    </script>
-
-    <script src="assets/js/expandcode.js"></script>
-    <script src="assets/js/fixsidebarscroll.js"></script>
-
-</head>
-
-<body class="page page-template page-template-template-dev-portal page-template-template-dev-portal-php sidebar-primary wpb-js-composer js-comp-ver-3.6.2 vc_responsive">
-  <header role="banner" class="banner navbar navbar-default navbar-fixed-top initial_header">
-    <div class="container">
-      <div class="navbar-header">
-          <a href="index.html" class="navbar-brand"><img src="assets/img/ripple-logo-color.png" class="logo"></a>
-      </div><!-- /.navbar-header -->
-      <div class="nav">
-        <div class="draft-warning">DRAFT PAGE</div>
-      </div><!-- /.nav -->
-
-    </div><!-- /.container -->
-
-    <div class="subnav dev_nav">
-      <div class="container">
-        <ul id="menu-dev-menu" class="menu">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">References <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="reference-rippled.html">rippled</a></li>
-                  <li><a href="reference-transaction-format.html">Transaction Format</a></li>
-                  <li><a href="reference-ledger-format.html">Ledger Format</a></li>
-                  <li><a href="reference-rippleapi.html">RippleAPI</a></li>
-                  <li><a href="reference-data-api.html">Ripple Data API v2</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="tutorial-rippleapi-beginners-guide.html">RippleAPI Beginners Guide</a></li>
-                  <li><a href="tutorial-rippled-setup.html">rippled Setup</a></li>
-                  <li><a href="tutorial-reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
-                  <li><a href="tutorial-multisign.html">How to Multi-Sign</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Concepts <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="concept-paths.html">Paths</a></li>
-                  <li><a href="concept-fees.html">Fees (Disambiguation)</a></li>
-                  <li><a href="concept-transfer-fees.html">Transfer Fees</a></li>
-                  <li><a href="concept-transaction-cost.html">Transaction Cost</a></li>
-                  <li><a href="concept-fee-voting.html">Fee Voting</a></li>
-                  <li><a href="concept-reserves.html">Reserves</a></li>
-                  <li><a href="concept-freeze.html">Freeze</a></li>
-                  <li><a href="concept-amendments.html">Amendments</a></li>
-                  <li><a href="concept-stand-alone-mode.html">Stand-Alone Mode</a></li>
-                  <li><a href="concept-noripple.html">Understanding the NoRipple flag</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Best Practices <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="concept-issuing-and-operational-addresses.html">Issuing and Operational Addresses</a></li>
-                  <li><a href="tutorial-gateway-guide.html">Gateway Guide</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">API Tools <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="ripple-api-tool.html">WebSocket API Tool</a></li>
-                  <li><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-                  <li><a href="tool-jsonrpc.html">rippled JSON-RPC Tool</a></li>
-            </ul>
-          </li>
-          
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-			  <li><a href="https://forum.ripple.com/viewforum.php?f=2">Forums</a></li>
-              <li><a href="https://www.bountysource.com/teams/ripple/bounties">Bounties</a></li>
-              <li><a href="https://ripplelabs.atlassian.net/">Bug Tracking</a></li>
-              <li><a href="https://ripple.com/category/dev-blog/">Dev Blog</a></li>
-              <li><a href="https://ripple.com/press-releases/">Press Center</a></li>
-              <li><a href="https://ripple.com/brand-guidelines/">Brand Guidelines</a></li>
-            </ul>
-            <li><a href="https://github.com/ripple/ripple-dev-portal" title="GitHub">Site Source</a></li>
-        </ul><!-- /#dev-menu -->
-      </div><!-- /.subnav .container -->
-    </div><!-- /.subnav -->
-  </header>
-
-
-  <div class="wrap container" role="document">
-      <aside class="sidebar" role="complementary">
-    <div class="dev_nav_wrapper">
-        <div id="cont">
-            <ul class="dev_nav_sidebar">
-                <li class="level-1"><a href="index.html">Category: Concepts</a></li>
-                <li class="level-2"><a href="concept-paths.html">Paths</a></li>
-                <li class="level-2"><a href="concept-fees.html">Fees (Disambiguation)</a></li>
-                <li class="level-2"><a href="concept-transfer-fees.html">Transfer Fees</a></li>
-                <li class="level-2"><a href="concept-transaction-cost.html">Transaction Cost</a></li>
-                <li class="level-2"><a href="concept-fee-voting.html">Fee Voting</a></li>
-                <li class="level-2"><a href="concept-reserves.html">Reserves</a></li>
-                <li class="level-2"><a href="concept-freeze.html">Freeze</a></li>
-                <li class="level-2"><a href="concept-amendments.html">Amendments</a></li>
-                <li class="level-2"><a href="concept-stand-alone-mode.html">Stand-Alone Mode</a></li>
-                <li class="level-2"><a href="concept-noripple.html">Understanding the NoRipple flag</a></li>
-            </ul>
-            <hr />
-            <h5>In this page:</h5>
-        </div>
-    <script type="text/javascript" src="assets/js/jquery.gensidebar.js"></script>
-    </div>
-      </aside>
-      <main class="main" role="main">
-    <div class='content'>
-        <h1 id="understanding-the-noripple-flag">Understanding the NoRipple Flag</h1>
+<h1 id="understanding-the-noripple-flag">Understanding the NoRipple Flag</h1>
 <p>In the Ripple Consensus Ledger (RCL), the "NoRipple" flag is a setting on a trust line. When an address enables the NoRipple flag on two trust lines, payments from third parties cannot "ripple" through that address on those trust lines. This protects liquidity providers from having balances shift unexpectedly between different issuers of the same currency.</p>
 <h2 id="background">Background</h2>
 <p>"Rippling" occurs when more than one trust line is adjusted in order to make a payment. For example, if Alice owes Charlie money, and Alice also owes Bob money, then you could represent that in Ripple with trust lines like so:</p>
-<p><img alt="Charlie --($10)-- Alice -- ($20) -- Bob" src="img/noripple-01.png"/></p>
+<p><img alt="Charlie --($10)-- Alice -- ($20) -- Bob" src="https://ripple.com/wp-content/uploads/2015/04/noripple-01.png"/></p>
 <p>If Bob wants to pay $3 to Charlie, then he could say, "Alice, take $3 of the money you owe me, and pay it to Charlie." Alice simply transfers some of the debt from Bob to Charlie. In the end, the Ripple trust lines work out like so:</p>
-<p><img alt="Charlie --($13)-- Alice --($17)-- Bob" src="img/noripple-02.png"/></p>
-<p>We call this process, where two addresses pay each other by adjusting the balances of trust lines in between them, "rippling". This is a useful and important feature of the Ripple Consensus Ledger. Rippling occurs when are linked by trust lines that use the same <a href="reference-rippled.html#currency-codes">currency code</a>. The issuer does not need to be the same: in fact, larger chains always involve changing issuers.</p>
+<p><img alt="Charlie --($13)-- Alice --($17)-- Bob" src="https://ripple.com/wp-content/uploads/2015/04/noripple-02.png"/></p>
+<p>We call this process, where two addresses pay each other by adjusting the balances of trust lines in between them, "rippling". This is a useful and important feature of the Ripple Consensus Ledger. Rippling occurs when are linked by trust lines that use the same <a href="https://ripple.com/build/rippled-apis/#currency-codes">currency code</a>. The issuer does not need to be the same: in fact, larger chains always involve changing issuers.</p>
 <h2 id="justification">Justification</h2>
 <p>Sometimes you do not want your balances to ripple. For example, imagine Emily has money at two different Gateways, like so</p>
-<p><img alt="Charlie --($10)-- Gateway A --($1)-- Emily --($100)-- Gateway B --($2)-- Daniel" src="img/noripple-03.png"/></p>
+<p><img alt="Charlie --($10)-- Gateway A --($1)-- Emily --($100)-- Gateway B --($2)-- Daniel" src="https://ripple.com/wp-content/uploads/2015/01/noripple-03.png"/></p>
 <p>Now Charlie can pay Daniel by rippling through Emily's address. For example, if Charlie pays Daniel $10:</p>
-<p><img alt="Charlie --($0)-- Gateway A --($11)-- Emily --($90)-- Gateway B --($12)-- Daniel" src="img/noripple-04.png"/></p>
+<p><img alt="Charlie --($0)-- Gateway A --($11)-- Emily --($90)-- Gateway B --($12)-- Daniel" src="https://ripple.com/wp-content/uploads/2015/01/noripple-04.png"/></p>
 <p>This may surprise Emily, who does not know Charlie or Daniel. Even worse, if Gateway A charges her higher fees to withdraw her money than Gateway B, this could cost Emily money. The NoRipple flag exists to avoid this scenario. If Emily sets it on both trust lines, then payments cannot ripple through her address using those two trust lines.</p>
 <p>For example:</p>
-<p><img alt="Charlie --($10)-- Gateway A --($1, NoRipple)-- Emily --($100,NoRipple)-- Gateway B --($2)-- Daniel" src="img/noripple-05.png"/></p>
+<p><img alt="Charlie --($10)-- Gateway A --($1, NoRipple)-- Emily --($100,NoRipple)-- Gateway B --($2)-- Daniel" src="https://ripple.com/wp-content/uploads/2015/01/noripple-05.png"/></p>
 <p>Now the above scenario, where Charlie pays Daniel while rippling through Emily's address, is no longer possible.</p>
 <h2 id="specifics">Specifics</h2>
 <p>The NoRipple flag makes certain paths invalid, so that they cannot be used to make payments. A path is considered invalid if and only if it enters <strong>and</strong> exits an address node through trust lines where NoRipple has been enabled for that address.</p>
-<p><img alt="Diagram demonstrating that NoRipple has to be set on both trust lines by the same address to do anything" src="img/noripple-06.png"/></p>
+<p><img alt="Diagram demonstrating that NoRipple has to be set on both trust lines by the same address to do anything" src="https://ripple.com/wp-content/uploads/2015/01/noripple-06.png"/></p>
 <h2 id="technical-details">Technical Details</h2>
 <h3 id="enabling-disabling-noripple">Enabling / Disabling NoRipple</h3>
 <p>The NoRipple flag can only be enabled on a trust line if the address has a positive or zero balance on that trust line. This is so that the feature cannot be abused to default on the obligation the trust line balance represents. (Of course, you can still default by abandoning the address.)</p>
-<p>In the <a href="reference-rippled.html"><code>rippled</code> APIs</a>, you can enable the NoRipple flag by sending a <a href="reference-transaction-format.html#trustset">TrustSet Transaction</a> with the <code>tfSetNoRipple</code> flag. You can disable NoRipple (enable rippling) with the <code>tfClearNoRipple</code> flag.</p>
-<p>In <a href="reference-rippleapi.html">RippleAPI</a>, you can enable the NoRipple flag by sending a <a href="reference-rippleapi.html#preparetrustline">Trustline transaction</a> transaction with the <code>ripplingDisabled</code> field of the trust line set to <code>true</code>.</p>
+<p>In the <a href="https://ripple.com/build/rippled-apis/"><code>rippled</code> APIs</a>, you can enable the NoRipple flag by sending a <a href="https://ripple.com/build/transactions/#trustset">TrustSet Transaction</a> with the <code>tfSetNoRipple</code> flag. You can disable NoRipple (enable rippling) with the <code>tfClearNoRipple</code> flag.</p>
+<p>In <a href="https://ripple.com/build/rippleapi/">RippleAPI</a>, you can enable the NoRipple flag by sending a <a href="https://ripple.com/build/rippleapi/#preparetrustline">Trustline transaction</a> transaction with the <code>ripplingDisabled</code> field of the trust line set to <code>true</code>.</p>
 <h3 id="looking-up-noripple-status">Looking Up NoRipple Status</h3>
 <p>In the case of two accounts that mutually trust each other, the NoRipple flag is tracked separately for each account.</p>
-<p>In the <a href="reference-rippled.html"><code>rippled</code> APIs</a>, you can use the <a href="https://ripple.com/build/rippled-apis/#account-lines">account_lines method</a> to look up the trust lines associated with an address. For each trust line, the <code>no_ripple</code> field shows whether the current address has enabled the NoRipple flag on that trust line, and the <code>no_ripple_peer</code> field shows whether the counterparty has enabled the NoRipple flag.</p>
-<p>In <a href="reference-rippleapi.html">RippleAPI</a>, you can use the <a href="reference-rippleapi.html#gettrustlines">getTrustlines</a> method to look up the trust lines associated with an address. For each trust line, the <code>ripplingDisabled</code> field shows whether the current address has enabled the NoRipple flag on that trust line, and the <code>counterparty.ripplingDisabled</code> field shows whether the counterparty has enabled the NoRipple flag.</p>
-    </div>
-      </main>
-  </div>
-
-<footer class="content-info" role="contentinfo">
-    <div class="container">
-        <div class="row">
-
-       		<section class="col-sm-3 widget nav_menu-3 widget_nav_menu">
-   		        <h4>Resources<hr></h4>
-   		        <ul id="menu-resources" class="menu">
-   		            <li class="menu-insights"><a href="https://ripple.com/insights/">Insights</a></li>
-	                <li class="menu-press-center"><a href="https://ripple.com/press-center/">Press Center</a></li>
-                    <li class="menu-media-resources"><a href="https://ripple.com/media-resources/">Media Resources</a></li>
-                    <li class="menu-videos"><a href="https://ripple.com/videos/">Videos</a></li>
-                    <li class="menu-whitepapers-reports"><a href="https://ripple.com/whitepapers-reports/">Whitepapers &#038; Reports</a></li>
-                    <li class="menu-xrp-portal"><a href="https://ripple.com/xrp-portal/">XRP Portal</a></li>
-                </ul>
-            </section>
-
-            <section class="col-sm-3 widget nav_menu-5 widget_nav_menu">
-                <h4>Regulators<hr></h4>
-                <ul id="menu-compliance-regulatory-relations" class="menu"><li class="menu-compliance"><a href="https://ripple.com/compliance/">Compliance</a></li>
-                    <li class="menu-policy-framework"><a href="https://ripple.com/policy-framework/">Policy Framework</a></li>
-                </ul>
-            </section>
-
-            <section class="col-sm-3 widget nav_menu-4 widget_nav_menu">
-                <h4>Support<hr></h4>
-                <ul id="menu-dev-footer-menu" class="menu">
-                    <li class="menu-contact-us"><a href="https://ripple.com/contact/">Contact Us</a></li>
-                    <li class="active menu-developer-center"><a href="https://ripple.com/build/">Developer Center</a></li>
-                    <li class="menu-knowledge-center"><a href="https://ripple.com/learn/">Knowledge Center</a></li>
-                    <li class="menu-ripple-forum"><a target="_blank" href="https://forum.ripple.com/">Ripple Forum</a></li>
-                </ul>
-            </section>
-
-            <section class="col-sm-3 widget nav_menu-2 widget_nav_menu">
-                <h4>About<hr></h4>
-                <ul id="menu-company-footer" class="menu">
-                    <li class="menu-our-company"><a href="https://ripple.com/company/">Our Company</a></li>
-                    <li class="menu-careers"><a href="https://ripple.com/company/careers/">Careers</a></li>
-                </ul>
-            </section>
-
-       		<div class="col-sm-12 absolute_bottom_footer">
-       			<div class="col-sm-8">
-				    <span>&copy; 2013-2015 Ripple Labs, Inc. All Rights Reserved.</span>
-				    <span><a href="https://ripple.com/terms-of-use/">Terms</a></span>
-				    <span><a href="https://ripple.com/privacy-policy/">Privacy</a></span>
-			    </div>
-       		</div><!-- /.absolute_bottom_footer -->
-       		
-	    </div><!-- /.row -->
-	</div><!-- /.container -->
-</footer>
-</body>
-</html>
+<p>In the <a href="https://ripple.com/build/rippled-apis/"><code>rippled</code> APIs</a>, you can use the <a href="https://ripple.com/build/rippled-apis/#account-lines">account_lines method</a> to look up the trust lines associated with an address. For each trust line, the <code>no_ripple</code> field shows whether the current address has enabled the NoRipple flag on that trust line, and the <code>no_ripple_peer</code> field shows whether the counterparty has enabled the NoRipple flag.</p>
+<p>In <a href="https://ripple.com/build/rippleapi/">RippleAPI</a>, you can use the <a href="https://ripple.com/build/rippleapi/#gettrustlines">getTrustlines</a> method to look up the trust lines associated with an address. For each trust line, the <code>ripplingDisabled</code> field shows whether the current address has enabled the NoRipple flag on that trust line, and the <code>counterparty.ripplingDisabled</code> field shows whether the counterparty has enabled the NoRipple flag.</p>

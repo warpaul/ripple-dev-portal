@@ -1,167 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
-
-    <title>Ledger Format - Ripple Developer Portal</title>
-
-    <!-- favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- jQuery -->
-    <script src="assets/vendor/jquery-1.11.1.min.js"></script>
-    
-    <!-- Custom Stylesheets. ripple.css includes bootstrap, font stuff -->
-    <link href="assets/css/ripple.css" rel="stylesheet" />
-    <link href="assets/css/devportal.css" rel="stylesheet" />
-
-    <!-- Bootstrap JS -->
-    <script src="assets/vendor/bootstrap.min.js"></script>
-
-
-    <!-- syntax highlighting -->
-    <link rel="stylesheet" href="assets/vendor/docco.min.css">
-    <script src="assets/vendor/highlight.min.js"></script>
-
-    <!-- syntax selection js -->
-    <script src="assets/js/multicodetab.js"></script>
-    <script>
-        $(document).ready(function() {
-            $().multicode_tabs();
-            hljs.initHighlighting();
-            make_code_expandable();
-        });
-    </script>
-
-    <script src="assets/js/expandcode.js"></script>
-    <script src="assets/js/fixsidebarscroll.js"></script>
-
-</head>
-
-<body class="page page-template page-template-template-dev-portal page-template-template-dev-portal-php sidebar-primary wpb-js-composer js-comp-ver-3.6.2 vc_responsive">
-  <header role="banner" class="banner navbar navbar-default navbar-fixed-top initial_header">
-    <div class="container">
-      <div class="navbar-header">
-          <a href="index.html" class="navbar-brand"><img src="assets/img/ripple-logo-color.png" class="logo"></a>
-      </div><!-- /.navbar-header -->
-      <div class="nav">
-        <div class="draft-warning">DRAFT PAGE</div>
-      </div><!-- /.nav -->
-
-    </div><!-- /.container -->
-
-    <div class="subnav dev_nav">
-      <div class="container">
-        <ul id="menu-dev-menu" class="menu">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">References <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="reference-rippled.html">rippled</a></li>
-                  <li><a href="reference-transaction-format.html">Transaction Format</a></li>
-                  <li><a href="reference-ledger-format.html">Ledger Format</a></li>
-                  <li><a href="reference-rippleapi.html">RippleAPI</a></li>
-                  <li><a href="reference-data-api.html">Ripple Data API v2</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="tutorial-rippleapi-beginners-guide.html">RippleAPI Beginners Guide</a></li>
-                  <li><a href="tutorial-rippled-setup.html">rippled Setup</a></li>
-                  <li><a href="tutorial-reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
-                  <li><a href="tutorial-multisign.html">How to Multi-Sign</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Concepts <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="concept-paths.html">Paths</a></li>
-                  <li><a href="concept-fees.html">Fees (Disambiguation)</a></li>
-                  <li><a href="concept-transfer-fees.html">Transfer Fees</a></li>
-                  <li><a href="concept-transaction-cost.html">Transaction Cost</a></li>
-                  <li><a href="concept-fee-voting.html">Fee Voting</a></li>
-                  <li><a href="concept-reserves.html">Reserves</a></li>
-                  <li><a href="concept-freeze.html">Freeze</a></li>
-                  <li><a href="concept-amendments.html">Amendments</a></li>
-                  <li><a href="concept-stand-alone-mode.html">Stand-Alone Mode</a></li>
-                  <li><a href="concept-noripple.html">Understanding the NoRipple flag</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Best Practices <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="concept-issuing-and-operational-addresses.html">Issuing and Operational Addresses</a></li>
-                  <li><a href="tutorial-gateway-guide.html">Gateway Guide</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">API Tools <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="ripple-api-tool.html">WebSocket API Tool</a></li>
-                  <li><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-                  <li><a href="tool-jsonrpc.html">rippled JSON-RPC Tool</a></li>
-            </ul>
-          </li>
-          
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-			  <li><a href="https://forum.ripple.com/viewforum.php?f=2">Forums</a></li>
-              <li><a href="https://www.bountysource.com/teams/ripple/bounties">Bounties</a></li>
-              <li><a href="https://ripplelabs.atlassian.net/">Bug Tracking</a></li>
-              <li><a href="https://ripple.com/category/dev-blog/">Dev Blog</a></li>
-              <li><a href="https://ripple.com/press-releases/">Press Center</a></li>
-              <li><a href="https://ripple.com/brand-guidelines/">Brand Guidelines</a></li>
-            </ul>
-            <li><a href="https://github.com/ripple/ripple-dev-portal" title="GitHub">Site Source</a></li>
-        </ul><!-- /#dev-menu -->
-      </div><!-- /.subnav .container -->
-    </div><!-- /.subnav -->
-  </header>
-
-
-  <div class="wrap container" role="document">
-      <aside class="sidebar" role="complementary">
-    <div class="dev_nav_wrapper">
-        <div id="cont">
-            <ul class="dev_nav_sidebar">
-                <li class="level-1"><a href="index.html">Category: References</a></li>
-                <li class="level-2"><a href="reference-rippled.html">rippled</a></li>
-                <li class="level-2"><a href="reference-transaction-format.html">Transaction Format</a></li>
-                <li class="level-2"><a href="reference-ledger-format.html">Ledger Format</a></li>
-                <li class="level-2"><a href="reference-rippleapi.html">RippleAPI</a></li>
-                <li class="level-2"><a href="reference-data-api.html">Ripple Data API v2</a></li>
-            </ul>
-            <hr />
-            <h5>In this page:</h5>
-        </div>
-    <script type="text/javascript" src="assets/js/jquery.gensidebar.js"></script>
-    </div>
-      </aside>
-      <main class="main" role="main">
-    <div class='content'>
-        <h1 id="the-ledger">The Ledger</h1>
+<h1 id="the-ledger">The Ledger</h1>
 <p>The point of the Ripple software is to maintain a shared, global ledger that is open to all, so that individual participants can trust the integrity of the ledger without having to trust any single institution to manage it. The <code>rippled</code> server software accomplishes this by maintaining a ledger database that can only be updated according to very specific rules. Each instance of <code>rippled</code> maintains a full copy of the ledger, and the peer-to-peer network of <code>rippled</code> servers distributes candidate transactions among themselves. The consensus process determines which transactions get applied to each new version of the ledger. See also: <a href="https://ripple.com/knowledge_center/the-ripple-ledger-consensus-process/">The Consensus Process</a>.</p>
-<p><img alt="Diagram: Each ledger is the result of applying transactions to the previous ledger version." src="img/ledger-process.png"/></p>
+<p><img alt="Diagram: Each ledger is the result of applying transactions to the previous ledger version." src="https://ripple.com/wp-content/themes/ripple-beta/assets/img/ledger-process.png"/></p>
 <p>The shared global ledger is actually a series of individual ledgers, or ledger versions, which <code>rippled</code> keeps in its internal database. Every ledger version has a <a href="#ledger-index">ledger index</a> which identifies the order in which ledgers occur. Each closed ledger version also has an identifying hash value, which uniquely identifies the contents of that ledger. At any given time, a <code>rippled</code> instance has an in-progress "current" open ledger, plus some number of closed ledgers that have not yet been approved by consensus, and any number of historical ledgers that have been validated by consensus. Only the validated ledgers are certain to be accurate and immutable.</p>
 <p>A single ledger version consists of several components:</p>
-<p><img alt="Diagram: A ledger has transactions, a state node, and a header with the close time and validation info" src="img/ledger-components.png"/></p>
+<p><img alt="Diagram: A ledger has transactions, a state node, and a header with the close time and validation info" src="https://ripple.com/wp-content/themes/ripple-beta/assets/img/ledger-components.png"/></p>
 <ul>
 <li>A <strong>header</strong> - The <a href="#ledger-index">ledger index</a>, hashes of its other contents, and other metadata.</li>
-<li>A <strong>transaction tree</strong> - The <a href="reference-transaction-format.html">transactions</a> that were applied to the previous ledger to make this one. Transactions are the <em>only</em> way to modify the ledger.</li>
+<li>A <strong>transaction tree</strong> - The <a href="https://ripple.com/build/transactions/">transactions</a> that were applied to the previous ledger to make this one. Transactions are the <em>only</em> way to modify the ledger.</li>
 <li>A <strong>state tree</strong> - All the <a href="#ledger-node-types">ledger nodes</a> that contain the settings, balances, and objects in the ledger as of this version.</li>
 </ul>
 <h2 id="tree-format">Tree Format</h2>
 <p>As its name might suggest, a ledger's state tree is a tree data structure, with each node identified by a 256-bit value called an <code>index</code>. In JSON, a ledger node's index value is represented as a 64-character hexadecimal string like <code>"193C591BF62482468422313F9D3274B5927CA80B4DD3707E42015DD609E39C94"</code>. Every node in the state tree has an index that you can use as a key to look up the node in the state tree; every transaction has an indentifying hash that you can use to look up the transaction in the transaction tree. Do not confuse the <code>index</code> (key) of a ledger node with the <a href="#ledger-index"><code>ledger_index</code> (sequence number) of a ledger</a>.</p>
 <p>In the case of transactions, the identifying hash is based on the signed transaction instructions, but the contents of the transaction object when you look it up also contain the results and metadata of the transaction, which are not taken into account when generating the hash.</p>
 <p>In the case of state nodes, <code>rippled</code> usually includes the <code>index</code> of the node along with its contents. However, the index itself is not part of the contents. The index is derived by hashing important contents of the node, along with a <a href="https://github.com/ripple/rippled/blob/ceff6bc2713eaf80feafe56a02f4d636827b89a9/src/ripple/protocol/LedgerFormats.h#L94">namespace identifier</a>. The ledger node type determines which namespace identifier to use as well as which contents to include in the hash. This ensures every index is unique. For a hash function, <code>rippled</code> uses SHA-512 and then truncates the result to the first 256 bytes. This algorithm, informally called SHA-512Half, provides an output that has comparable security to SHA-256, but runs faster on 64-bit processors.</p>
-<p><img alt="Diagram: rippled uses SHA-512Half to generate indexes for ledger nodes. The space key prevents indexes for different node types from colliding." src="img/ledger-indexes.png"/></p>
+<p><img alt="Diagram: rippled uses SHA-512Half to generate indexes for ledger nodes. The space key prevents indexes for different node types from colliding." src="https://ripple.com/wp-content/themes/ripple-beta/assets/img/ledger-indexes.png"/></p>
 <h2 id="header-format">Header Format</h2>
 <p><a href="https://github.com/ripple/rippled/blob/5d2d88209f1732a0f8d592012094e345cbe3e675/src/ripple/ledger/ReadView.h#L68" title="Source">[Source]<br/></a></p>
-<p>Every ledger version has a unique header that describes the contents. You can look up a ledger's header information with the <a href="reference-rippled.html#ledger"><code>ledger</code> command</a>. The contents of the ledger header are as follows:</p>
+<p>Every ledger version has a unique header that describes the contents. You can look up a ledger's header information with the <a href="https://ripple.com/build/rippled-apis/#ledger"><code>ledger</code> command</a>. The contents of the ledger header are as follows:</p>
 <table>
 <thead>
 <tr>
@@ -236,7 +91,7 @@
 </table>
 <h3 id="ledger-index">Ledger Index</h3>
 <p>A ledger index is a 32-bit unsigned integer used to identify a ledger. The ledger index is also known as the ledger's sequence number. The very first ledger was ledger index 1, and each subsequent ledger has a ledger index 1 higher than that of the ledger immediately before it.</p>
-<p>The ledger index indicates the order of the ledgers; the <a href="reference-rippled.html#hashes">Hash</a> value identifies the exact contents of the ledger. Two ledgers with the same hash are always identical. For validated ledgers, hash values and sequence numbers are equally valid and correlate 1:1. However, this is not true for in-progress ledgers:</p>
+<p>The ledger index indicates the order of the ledgers; the <a href="https://ripple.com/build/rippled-apis/#hashes">Hash</a> value identifies the exact contents of the ledger. Two ledgers with the same hash are always identical. For validated ledgers, hash values and sequence numbers are equally valid and correlate 1:1. However, this is not true for in-progress ledgers:</p>
 <ul>
 <li>Two different <code>rippled</code> servers may have different contents for a current ledger with the same ledger index, due to latency in propagating transactions throughout the network.</li>
 <li>There may be multiple closed ledger versions competing to be validated by consensus. These ledger versions have the same sequence number but different contents (and different hashes). Only one of these closed ledgers can become validated.</li>
@@ -253,7 +108,7 @@
 <li><a href="#offer"><strong>Offer</strong> - An offer to exchange currencies, known in finance as an <em>order</em>.</a></li>
 <li><a href="#ripplestate"><strong>RippleState</strong> - Links two accounts, tracking the balance of one currency between them. The concept of a <em>trust line</em> is really an abstraction of this node type.</a></li>
 </ul>
-<p>Each ledger node consists of several fields. In the peer protocol that <code>rippled</code> servers use to communicate with each other, ledger nodes are represented in their raw binary format. In other <a href="reference-rippled.html"><code>rippled</code> APIs</a>, ledger nodes are represented as JSON objects.</p>
+<p>Each ledger node consists of several fields. In the peer protocol that <code>rippled</code> servers use to communicate with each other, ledger nodes are represented in their raw binary format. In other <a href="https://ripple.com/build/rippled-apis/"><code>rippled</code> APIs</a>, ledger nodes are represented as JSON objects.</p>
 <h2 id="accountroot">AccountRoot</h2>
 <p><a href="https://github.com/ripple/rippled/blob/5d2d88209f1732a0f8d592012094e345cbe3e675/src/ripple/protocol/impl/LedgerFormats.cpp#L27" title="Source">[Source]<br/></a></p>
 <p>The <code>AccountRoot</code> node type describes a single <em>account</em> object. Example <code>AccountRoot</code> node:</p>
@@ -343,7 +198,7 @@
 <td>RegularKey</td>
 <td>String</td>
 <td>AccountID</td>
-<td>(Optional) The address of a keypair that can be used to sign transactions for this account instead of the master key. Use a <a href="reference-transaction-format.html#setregularkey">SetRegularKey transaction</a> to change this value.</td>
+<td>(Optional) The address of a keypair that can be used to sign transactions for this account instead of the master key. Use a <a href="https://ripple.com/build/transactions/#setregularkey">SetRegularKey transaction</a> to change this value.</td>
 </tr>
 <tr>
 <td>EmailHash</td>
@@ -384,7 +239,7 @@
 </tbody>
 </table>
 <h3 id="accountroot-flags">AccountRoot Flags</h3>
-<p>There are several options which can be either enabled or disabled for an account. These options can be changed with an <a href="reference-transaction-format.html#accountset">AccountSet transaction</a>. In the ledger, flags are represented as binary values that can be combined with bitwise-or operations. The bit values for the flags in the ledger are different than the values used to enable or disable those flags in a transaction. Ledger flags have names that begin with <em>lsf</em>.</p>
+<p>There are several options which can be either enabled or disabled for an account. These options can be changed with an <a href="https://ripple.com/build/transactions/#accountset">AccountSet transaction</a>. In the ledger, flags are represented as binary values that can be combined with bitwise-or operations. The bit values for the flags in the ledger are different than the values used to enable or disable those flags in a transaction. Ledger flags have names that begin with <em>lsf</em>.</p>
 <p>AccountRoot nodes can have the following flag values:</p>
 <table>
 <thead>
@@ -393,7 +248,7 @@
 <th>Hex Value</th>
 <th>Decimal Value</th>
 <th>Description</th>
-<th>Corresponding <a href="reference-transaction-format.html#accountset-flags">AccountSet Flag</a></th>
+<th>Corresponding <a href="https://ripple.com/build/transactions/#accountset-flags">AccountSet Flag</a></th>
 </tr>
 </thead>
 <tbody>
@@ -450,7 +305,7 @@
 <td>lsfDefaultRipple</td>
 <td>0x00800000</td>
 <td>8388608</td>
-<td>Enable <a href="concept-noripple.html">rippling</a> on this account's trust lines by default. Required for gateways; discouraged for other accounts.</td>
+<td>Enable <a href="https://ripple.com/knowledge_center/understanding-the-noripple-flag/">rippling</a> on this account's trust lines by default. Required for gateways; discouraged for other accounts.</td>
 <td>asfDefaultRipple</td>
 </tr>
 </tbody>
@@ -614,8 +469,8 @@
 </ul>
 <h2 id="offer">Offer</h2>
 <p><a href="https://github.com/ripple/rippled/blob/5d2d88209f1732a0f8d592012094e345cbe3e675/src/ripple/protocol/impl/LedgerFormats.cpp#L57" title="Source">[Source]<br/></a></p>
-<p>The <code>Offer</code> node type describes an offer to exchange currencies, more traditionally known as an <em>order</em>, which is currently in an order book in Ripple's distributed exchange. An <a href="reference-transaction-format.html#offercreate">OfferCreate transaction</a> only creates an Offer node in the ledger when the offer cannot be fully executed immediately by consuming other offers already in the ledger.</p>
-<p>An offer can become unfunded through other activities in the network, while remaining in the ledger. However, <code>rippled</code> will automatically prune any unfunded offers it happens across in the course of transaction processing (and <em>only</em> transaction processing, because the ledger state must only be changed by transactions). For more information, see <a href="reference-transaction-format.html#lifecycle-of-an-offer">lifecycle of an offer</a>.</p>
+<p>The <code>Offer</code> node type describes an offer to exchange currencies, more traditionally known as an <em>order</em>, which is currently in an order book in Ripple's distributed exchange. An <a href="https://ripple.com/build/transactions/#offercreate">OfferCreate transaction</a> only creates an Offer node in the ledger when the offer cannot be fully executed immediately by consuming other offers already in the ledger.</p>
+<p>An offer can become unfunded through other activities in the network, while remaining in the ledger. However, <code>rippled</code> will automatically prune any unfunded offers it happens across in the course of transaction processing (and <em>only</em> transaction processing, because the ledger state must only be changed by transactions). For more information, see <a href="https://ripple.com/build/transactions/#lifecycle-of-an-offer">lifecycle of an offer</a>.</p>
 <p>Example Offer node:</p>
 <pre><code>{
     "Account": "rBqb89MRQJnMPq8wTwEbtz4kvxrEDfcYvt",
@@ -669,7 +524,7 @@
 <td>Sequence</td>
 <td>Number</td>
 <td>UInt32</td>
-<td>The <code>Sequence</code> value of the <a href="reference-transaction-format.html#offercreate">OfferCreate</a> transaction that created this Offer node. Used in combination with the <code>Account</code> to identify this Offer.</td>
+<td>The <code>Sequence</code> value of the <a href="https://ripple.com/build/transactions/#offercreate">OfferCreate</a> transaction that created this Offer node. Used in combination with the <code>Account</code> to identify this Offer.</td>
 </tr>
 <tr>
 <td>TakerPays</td>
@@ -717,12 +572,12 @@
 <td>Expiration</td>
 <td>Number</td>
 <td>UInt32</td>
-<td>(Optional) Indicates the time after which this offer will be considered unfunded. See <a href="reference-rippled.html#specifying-time">Specifying Time</a> for details.</td>
+<td>(Optional) Indicates the time after which this offer will be considered unfunded. See <a href="https://ripple.com/build/rippled-apis/#specifying-time">Specifying Time</a> for details.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="offer-flags">Offer Flags</h3>
-<p>There are several options which can be either enabled or disabled when an <a href="reference-transaction-format.html#offercreate">OfferCreate transaction</a> creates an offer node. In the ledger, flags are represented as binary values that can be combined with bitwise-or operations. The bit values for the flags in the ledger are different than the values used to enable or disable those flags in a transaction. Ledger flags have names that begin with <em>lsf</em>.</p>
+<p>There are several options which can be either enabled or disabled when an <a href="https://ripple.com/build/transactions/#offercreate">OfferCreate transaction</a> creates an offer node. In the ledger, flags are represented as binary values that can be combined with bitwise-or operations. The bit values for the flags in the ledger are different than the values used to enable or disable those flags in a transaction. Ledger flags have names that begin with <em>lsf</em>.</p>
 <p>Offer nodes can have the following flag values:</p>
 <table>
 <thead>
@@ -731,7 +586,7 @@
 <th>Hex Value</th>
 <th>Decimal Value</th>
 <th>Description</th>
-<th>Corresponding <a href="reference-transaction-format.html#offercreate-flags">OfferCreate Flag</a></th>
+<th>Corresponding <a href="https://ripple.com/build/transactions/#offercreate-flags">OfferCreate Flag</a></th>
 </tr>
 </thead>
 <tbody>
@@ -880,7 +735,7 @@
 </tbody>
 </table>
 <h3 id="ripplestate-flags">RippleState Flags</h3>
-<p>There are several options which can be either enabled or disabled for a trust line. These options can be changed with a <a href="reference-transaction-format.html#trustset">TrustSet transaction</a>. In the ledger, flags are represented as binary values that can be combined with bitwise-or operations. The bit values for the flags in the ledger are different than the values used to enable or disable those flags in a transaction. Ledger flags have names that begin with <em>lsf</em>.</p>
+<p>There are several options which can be either enabled or disabled for a trust line. These options can be changed with a <a href="https://ripple.com/build/transactions/#trustset">TrustSet transaction</a>. In the ledger, flags are represented as binary values that can be combined with bitwise-or operations. The bit values for the flags in the ledger are different than the values used to enable or disable those flags in a transaction. Ledger flags have names that begin with <em>lsf</em>.</p>
 <p>RippleState nodes can have the following flag values:</p>
 <table>
 <thead>
@@ -889,7 +744,7 @@
 <th>Hex Value</th>
 <th>Decimal Value</th>
 <th>Description</th>
-<th>Corresponding <a href="reference-transaction-format.html#trustset-flags">TrustSet Flag</a></th>
+<th>Corresponding <a href="https://ripple.com/build/transactions/#trustset-flags">TrustSet Flag</a></th>
 </tr>
 </thead>
 <tbody>
@@ -925,14 +780,14 @@
 <td>lsfLowNoRipple</td>
 <td>0x00100000</td>
 <td>1048576</td>
-<td>The low account <a href="concept-noripple.html">has disabled rippling</a> from this trust line to other trust lines with the same account's NoRipple flag set.</td>
+<td>The low account <a href="https://ripple.com/knowledge_center/understanding-the-noripple-flag/">has disabled rippling</a> from this trust line to other trust lines with the same account's NoRipple flag set.</td>
 <td>tfSetNoRipple</td>
 </tr>
 <tr>
 <td>lsfHighNoRipple</td>
 <td>0x00200000</td>
 <td>2097152</td>
-<td>The high account <a href="concept-noripple.html">has disabled rippling</a> from this trust line to other trust lines with the same account's NoRipple flag set.</td>
+<td>The high account <a href="https://ripple.com/knowledge_center/understanding-the-noripple-flag/">has disabled rippling</a> from this trust line to other trust lines with the same account's NoRipple flag set.</td>
 <td>tfSetNoRipple</td>
 </tr>
 <tr>
@@ -952,7 +807,7 @@
 </tbody>
 </table>
 <h3 id="contributing-to-the-owner-reserve">Contributing to the Owner Reserve</h3>
-<p>If an account modifies a trust line to put it in a non-default state, then that trust line counts towards the account's <a href="concept-reserves.html#owner-reserves">owner reserve</a>. In a RippleState node, the <code>lsfLowReserve</code> and <code>lsfHighReserve</code> flags indicate which account(s) are responsible for the owner reserve. The <code>rippled</code> server automatically sets these flags when it modifies a trust line.</p>
+<p>If an account modifies a trust line to put it in a non-default state, then that trust line counts towards the account's <a href="https://ripple.com/build/reserves/#owner-reserves">owner reserve</a>. In a RippleState node, the <code>lsfLowReserve</code> and <code>lsfHighReserve</code> flags indicate which account(s) are responsible for the owner reserve. The <code>rippled</code> server automatically sets these flags when it modifies a trust line.</p>
 <p>The values that count towards a trust line's non-default state are as follows:</p>
 <table>
 <thead>
@@ -1001,7 +856,7 @@
 </ul>
 <h2 id="signerlist">SignerList</h2>
 <p><a href="https://github.com/ripple/rippled/blob/6d2e3da30696bd10e3bb11a5ff6d45d2c4dae90f/src/ripple/protocol/impl/LedgerFormats.cpp#L127" title="Source">[Source]<br/></a></p>
-<p>The <code>SignerList</code> node type represents a list of parties that, as a group, are authorized to sign a transaction in place of an individual account. You can create, replace, or remove a SignerList using the <a href="reference-transaction-format.html#signerlistset">SignerListSet transaction type</a> This node type is introduced by the <a href="concept-amendments.html#multisign">MultiSign amendment</a>. <em>(New in [version 0.31.0][])</em></p>
+<p>The <code>SignerList</code> node type represents a list of parties that, as a group, are authorized to sign a transaction in place of an individual account. You can create, replace, or remove a SignerList using the <a href="https://ripple.com/build/transactions/#signerlistset">SignerListSet transaction type</a> This node type is introduced by the <a href="https://ripple.com/build/amendments/#multisign">MultiSign amendment</a>. <em>(New in [version 0.31.0][])</em></p>
 <p>Example SignerList node:</p>
 <pre><code>{
     "Flags": 0,
@@ -1067,7 +922,7 @@
 <td>SignerListID</td>
 <td>Number</td>
 <td>UInt32</td>
-<td>An ID for this signer list. Currently always set to <code>0</code>. If a future <a href="concept-amendments.html">amendment</a> allows multiple signer lists for an account, this may change.</td>
+<td>An ID for this signer list. Currently always set to <code>0</code>. If a future <a href="https://ripple.com/build/amendments/">amendment</a> allows multiple signer lists for an account, this may change.</td>
 </tr>
 <tr>
 <td>PreviousTxnID</td>
@@ -1112,62 +967,4 @@
 </table>
 <p>When processing a multi-signed transaction, the server dereferences the <code>Account</code> values with respect to the ledger at the time of transaction execution. If the address <em>does not</em> correspond to a funded <a href="#accountroot">AccountRoot node</a>, then only the master secret associated with that address can be used to produce a valid signature. If the account <em>does</em> exist in the ledger, then it depends on the state of that account. If the account has a Regular Key configured, the Regular Key can be used. The account's master key can only be used if it is not disabled. A multi-signature cannot be used as a component of another multi-signature.</p>
 <h3 id="signerlists-and-reserves">SignerLists and Reserves</h3>
-<p>A SignerList contributes to its owner's <a href="concept-reserves.html">reserve requirement</a>. The SignerList itself counts as two objects, and each member of the list counts as one. As a result, the total owner reserve associated with a SignerList is anywhere from 3 times to 10 times the reserve required by a single trust line (<a href="#ripplestate">RippleState</a>) or <a href="#offer">Offer</a> node in the ledger.</p>
-    </div>
-      </main>
-  </div>
-
-<footer class="content-info" role="contentinfo">
-    <div class="container">
-        <div class="row">
-
-       		<section class="col-sm-3 widget nav_menu-3 widget_nav_menu">
-   		        <h4>Resources<hr></h4>
-   		        <ul id="menu-resources" class="menu">
-   		            <li class="menu-insights"><a href="https://ripple.com/insights/">Insights</a></li>
-	                <li class="menu-press-center"><a href="https://ripple.com/press-center/">Press Center</a></li>
-                    <li class="menu-media-resources"><a href="https://ripple.com/media-resources/">Media Resources</a></li>
-                    <li class="menu-videos"><a href="https://ripple.com/videos/">Videos</a></li>
-                    <li class="menu-whitepapers-reports"><a href="https://ripple.com/whitepapers-reports/">Whitepapers &#038; Reports</a></li>
-                    <li class="menu-xrp-portal"><a href="https://ripple.com/xrp-portal/">XRP Portal</a></li>
-                </ul>
-            </section>
-
-            <section class="col-sm-3 widget nav_menu-5 widget_nav_menu">
-                <h4>Regulators<hr></h4>
-                <ul id="menu-compliance-regulatory-relations" class="menu"><li class="menu-compliance"><a href="https://ripple.com/compliance/">Compliance</a></li>
-                    <li class="menu-policy-framework"><a href="https://ripple.com/policy-framework/">Policy Framework</a></li>
-                </ul>
-            </section>
-
-            <section class="col-sm-3 widget nav_menu-4 widget_nav_menu">
-                <h4>Support<hr></h4>
-                <ul id="menu-dev-footer-menu" class="menu">
-                    <li class="menu-contact-us"><a href="https://ripple.com/contact/">Contact Us</a></li>
-                    <li class="active menu-developer-center"><a href="https://ripple.com/build/">Developer Center</a></li>
-                    <li class="menu-knowledge-center"><a href="https://ripple.com/learn/">Knowledge Center</a></li>
-                    <li class="menu-ripple-forum"><a target="_blank" href="https://forum.ripple.com/">Ripple Forum</a></li>
-                </ul>
-            </section>
-
-            <section class="col-sm-3 widget nav_menu-2 widget_nav_menu">
-                <h4>About<hr></h4>
-                <ul id="menu-company-footer" class="menu">
-                    <li class="menu-our-company"><a href="https://ripple.com/company/">Our Company</a></li>
-                    <li class="menu-careers"><a href="https://ripple.com/company/careers/">Careers</a></li>
-                </ul>
-            </section>
-
-       		<div class="col-sm-12 absolute_bottom_footer">
-       			<div class="col-sm-8">
-				    <span>&copy; 2013-2015 Ripple Labs, Inc. All Rights Reserved.</span>
-				    <span><a href="https://ripple.com/terms-of-use/">Terms</a></span>
-				    <span><a href="https://ripple.com/privacy-policy/">Privacy</a></span>
-			    </div>
-       		</div><!-- /.absolute_bottom_footer -->
-       		
-	    </div><!-- /.row -->
-	</div><!-- /.container -->
-</footer>
-</body>
-</html>
+<p>A SignerList contributes to its owner's <a href="https://ripple.com/build/reserves/">reserve requirement</a>. The SignerList itself counts as two objects, and each member of the list counts as one. As a result, the total owner reserve associated with a SignerList is anywhere from 3 times to 10 times the reserve required by a single trust line (<a href="#ripplestate">RippleState</a>) or <a href="#offer">Offer</a> node in the ledger.</p>

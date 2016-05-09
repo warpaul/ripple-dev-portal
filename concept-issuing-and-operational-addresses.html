@@ -1,146 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
-
-    <title>Issuing and Operational Addresses - Ripple Developer Portal</title>
-
-    <!-- favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- jQuery -->
-    <script src="assets/vendor/jquery-1.11.1.min.js"></script>
-    
-    <!-- Custom Stylesheets. ripple.css includes bootstrap, font stuff -->
-    <link href="assets/css/ripple.css" rel="stylesheet" />
-    <link href="assets/css/devportal.css" rel="stylesheet" />
-
-    <!-- Bootstrap JS -->
-    <script src="assets/vendor/bootstrap.min.js"></script>
-
-
-    <!-- syntax highlighting -->
-    <link rel="stylesheet" href="assets/vendor/docco.min.css">
-    <script src="assets/vendor/highlight.min.js"></script>
-
-    <!-- syntax selection js -->
-    <script src="assets/js/multicodetab.js"></script>
-    <script>
-        $(document).ready(function() {
-            $().multicode_tabs();
-            hljs.initHighlighting();
-            make_code_expandable();
-        });
-    </script>
-
-    <script src="assets/js/expandcode.js"></script>
-    <script src="assets/js/fixsidebarscroll.js"></script>
-
-</head>
-
-<body class="page page-template page-template-template-dev-portal page-template-template-dev-portal-php sidebar-primary wpb-js-composer js-comp-ver-3.6.2 vc_responsive">
-  <header role="banner" class="banner navbar navbar-default navbar-fixed-top initial_header">
-    <div class="container">
-      <div class="navbar-header">
-          <a href="index.html" class="navbar-brand"><img src="assets/img/ripple-logo-color.png" class="logo"></a>
-      </div><!-- /.navbar-header -->
-      <div class="nav">
-        <div class="draft-warning">DRAFT PAGE</div>
-      </div><!-- /.nav -->
-
-    </div><!-- /.container -->
-
-    <div class="subnav dev_nav">
-      <div class="container">
-        <ul id="menu-dev-menu" class="menu">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">References <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="reference-rippled.html">rippled</a></li>
-                  <li><a href="reference-transaction-format.html">Transaction Format</a></li>
-                  <li><a href="reference-ledger-format.html">Ledger Format</a></li>
-                  <li><a href="reference-rippleapi.html">RippleAPI</a></li>
-                  <li><a href="reference-data-api.html">Ripple Data API v2</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="tutorial-rippleapi-beginners-guide.html">RippleAPI Beginners Guide</a></li>
-                  <li><a href="tutorial-rippled-setup.html">rippled Setup</a></li>
-                  <li><a href="tutorial-reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
-                  <li><a href="tutorial-multisign.html">How to Multi-Sign</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Concepts <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="concept-paths.html">Paths</a></li>
-                  <li><a href="concept-fees.html">Fees (Disambiguation)</a></li>
-                  <li><a href="concept-transfer-fees.html">Transfer Fees</a></li>
-                  <li><a href="concept-transaction-cost.html">Transaction Cost</a></li>
-                  <li><a href="concept-fee-voting.html">Fee Voting</a></li>
-                  <li><a href="concept-reserves.html">Reserves</a></li>
-                  <li><a href="concept-freeze.html">Freeze</a></li>
-                  <li><a href="concept-amendments.html">Amendments</a></li>
-                  <li><a href="concept-stand-alone-mode.html">Stand-Alone Mode</a></li>
-                  <li><a href="concept-noripple.html">Understanding the NoRipple flag</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Best Practices <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="concept-issuing-and-operational-addresses.html">Issuing and Operational Addresses</a></li>
-                  <li><a href="tutorial-gateway-guide.html">Gateway Guide</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">API Tools <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="ripple-api-tool.html">WebSocket API Tool</a></li>
-                  <li><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-                  <li><a href="tool-jsonrpc.html">rippled JSON-RPC Tool</a></li>
-            </ul>
-          </li>
-          
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-			  <li><a href="https://forum.ripple.com/viewforum.php?f=2">Forums</a></li>
-              <li><a href="https://www.bountysource.com/teams/ripple/bounties">Bounties</a></li>
-              <li><a href="https://ripplelabs.atlassian.net/">Bug Tracking</a></li>
-              <li><a href="https://ripple.com/category/dev-blog/">Dev Blog</a></li>
-              <li><a href="https://ripple.com/press-releases/">Press Center</a></li>
-              <li><a href="https://ripple.com/brand-guidelines/">Brand Guidelines</a></li>
-            </ul>
-            <li><a href="https://github.com/ripple/ripple-dev-portal" title="GitHub">Site Source</a></li>
-        </ul><!-- /#dev-menu -->
-      </div><!-- /.subnav .container -->
-    </div><!-- /.subnav -->
-  </header>
-
-
-  <div class="wrap container" role="document">
-      <aside class="sidebar" role="complementary">
-    <div class="dev_nav_wrapper">
-        <div id="cont">
-            <ul class="dev_nav_sidebar">
-                <li class="level-1"><a href="index.html">Category: Best Practices</a></li>
-                <li class="level-2"><a href="concept-issuing-and-operational-addresses.html">Issuing and Operational Addresses</a></li>
-                <li class="level-2"><a href="tutorial-gateway-guide.html">Gateway Guide</a></li>
-            </ul>
-            <hr />
-            <h5>In this page:</h5>
-        </div>
-    <script type="text/javascript" src="assets/js/jquery.gensidebar.js"></script>
-    </div>
-      </aside>
-      <main class="main" role="main">
-    <div class='content'>
-        <h1 id="issuing-and-operational-addresses">Issuing and Operational Addresses</h1>
+<h1 id="issuing-and-operational-addresses">Issuing and Operational Addresses</h1>
 <p>All non-XRP currency balances (issuances) in the Ripple Consensus Ledger (RCL) are tied to accounting relationships between two Ripple addresses. To control an address in the RCL, you only need the secret key mathematically connected to that address. Since no party can unilaterally prevent transactions or correct the ledger, financial institutions typically use multiple Ripple ledger addresses to minimize the risk associated with a compromised secret key. Ripple strongly recommends the following separation of roles:</p>
 <ul>
 <li>One <strong>issuing address</strong>, also known as a "cold wallet." This address is the hub of the financial institution's accounting relationships in the ledger, but sends as few transactions as possible.</li>
@@ -148,16 +6,16 @@
 <li>Optional <strong>standby addresses</strong>, also known as "warm wallets." Trusted human operators use these addresses to transfer money to the operational addresses.</li>
 </ul>
 <h2 id="funds-lifecycle">Funds Lifecycle</h2>
-<p><a href="img/funds_flow_diagram.png"><img alt="Diagram: Funds flow from the issuing address to standby addresses, to operational addresses, to customer and partner addresses, and finally back to the issuing address." src="img/funds_flow_diagram.png"/></a></p>
+<p><a href="https://ripple.com/wp-content/uploads/2016/03/funds_flow_diagram.png"><img alt="Diagram: Funds flow from the issuing address to standby addresses, to operational addresses, to customer and partner addresses, and finally back to the issuing address." src="https://ripple.com/wp-content/uploads/2016/03/funds_flow_diagram.png"/></a></p>
 <p>Funds in the Ripple Consensus Ledger tend to flow in a cycle. When the issuing address sends payments, it creates balances in the accounting relationships in the Ripple Consensus Ledger. Within the RCL, users can exchange balances across different accounting relationships, so we use the term <em>issuances</em> to describe any non-XRP balance. Issuances have positive value from the perspective of the customers, partners, operational addresses, and standby addresses. The same issuances are negative balances from the perspective of the issuing address, since they represent obligations. When the issuing address receives a payment, this reduces its obligations, effectively "destroying" the issuances that were sent.</p>
-<p>The issuing address sends issuances to a standby address, or directly to an operational address. The standby addresses send those issuances to operational addresses. Operational addresses send payments to liquidity providers or other customers and partners. Because all issuances are tied to accounting relationships with the issuing address, payments and exchanges of issuances "ripple through" the issuing address. The payment debits the sender's balance in its accounting relationship with the issuing address and credits the recipient's balance in the recipient's accounting relationship with the issuing address. The Ripple Consensus Ledger also supports more complicated <a href="concept-paths.html">paths</a> that connect multiple issuers through order books and <a href="concept-noripple.html">liquidity providers who allow their funds to ripple</a>.</p>
+<p>The issuing address sends issuances to a standby address, or directly to an operational address. The standby addresses send those issuances to operational addresses. Operational addresses send payments to liquidity providers or other customers and partners. Because all issuances are tied to accounting relationships with the issuing address, payments and exchanges of issuances "ripple through" the issuing address. The payment debits the sender's balance in its accounting relationship with the issuing address and credits the recipient's balance in the recipient's accounting relationship with the issuing address. The Ripple Consensus Ledger also supports more complicated <a href="https://ripple.com/build/paths/">paths</a> that connect multiple issuers through order books and <a href="https://ripple.com/knowledge_center/understanding-the-noripple-flag/">liquidity providers who allow their funds to ripple</a>.</p>
 <h2 id="issuing-address">Issuing Address</h2>
 <p>The issuing address is like a vault. Partners, customers, and operational addresses create accounting relationships (trust lines) to the issuing address, but this address sends as few transactions as possible. Periodically, a human operator creates and signs a transaction from the issuing address in order to refill the balances of a standby or operational address. Ideally, the secret key used to sign these transactions should never be accessible from any internet-connected computer.</p>
 <p>Unlike a vault, the issuing address can receive payments directly from customers and partners. Since all transactions in the Ripple Consensus Ledger are public, automated systems can monitor for payments to the issuing address without needing a secret key.</p>
 <h3 id="issuing-address-compromise">Issuing Address Compromise</h3>
 <p>If a malicious actor learns the secret key behind a institution's issuing address, that actor can create new issuances without limit and trade them in the decentralized exchange. This would make it difficult for the financial institution to distinguish legitimately-obtained issuances and redeem them fairly. If a financial institution loses control of its issuing address, the institution must create a new issuing address, and all users who have accounting relationships with the old issuing address must create new accounting relationships with the new address.</p>
 <h3 id="multiple-issuing-addresses">Multiple Issuing Addresses</h3>
-<p>A financial institution can issue more than one currency in the Ripple Consensus Ledger from a single issuing address. However, there are some settings that apply equally to all currencies issued from an address, including the percentage for <a href="concept-transfer-fees.html">transfer fees</a> and the <a href="concept-freeze.html">global freeze</a> status. If the financial institution wants the flexibility to manage settings differently for each currency, the institution must use a different issuing address for each currency.</p>
+<p>A financial institution can issue more than one currency in the Ripple Consensus Ledger from a single issuing address. However, there are some settings that apply equally to all currencies issued from an address, including the percentage for <a href="https://ripple.com/knowledge_center/transfer-fees/">transfer fees</a> and the <a href="https://ripple.com/build/freeze/">global freeze</a> status. If the financial institution wants the flexibility to manage settings differently for each currency, the institution must use a different issuing address for each currency.</p>
 <h2 id="operational-addresses">Operational Addresses</h2>
 <p>An operational address is like a cash register. It makes payments on behalf of the institution by transferring issuances to customers and partners. In order to sign transactions automatically, the secret key for an operational address must be stored on a server that is connected to the internet. (The secret key can be stored encrypted, but the server must decrypt it in order to sign transactions.) Customers and partners do not, and should not, create accounting relationships with an operational address.</p>
 <p>Each operational address has a limited balance of issuances. When the balance of an operational address gets low, the financial institution refills it by sending a payment from the issuing address or a standby address.</p>
@@ -169,61 +27,3 @@
 <p>As with operational addresses, a standby address must have an accounting relationship with the issuing address, and not with customers or partners. All precautions that apply to operational addresses also apply to standby addresses.</p>
 <h3 id="standby-address-compromise">Standby Address Compromise</h3>
 <p>If a standby address is compromised, the results are similar to an operational address being compromised. A malicious actor can steal any balances possessed by the standby address, and the financial institution can change to a new standby address with no action from customers and partners.</p>
-    </div>
-      </main>
-  </div>
-
-<footer class="content-info" role="contentinfo">
-    <div class="container">
-        <div class="row">
-
-       		<section class="col-sm-3 widget nav_menu-3 widget_nav_menu">
-   		        <h4>Resources<hr></h4>
-   		        <ul id="menu-resources" class="menu">
-   		            <li class="menu-insights"><a href="https://ripple.com/insights/">Insights</a></li>
-	                <li class="menu-press-center"><a href="https://ripple.com/press-center/">Press Center</a></li>
-                    <li class="menu-media-resources"><a href="https://ripple.com/media-resources/">Media Resources</a></li>
-                    <li class="menu-videos"><a href="https://ripple.com/videos/">Videos</a></li>
-                    <li class="menu-whitepapers-reports"><a href="https://ripple.com/whitepapers-reports/">Whitepapers &#038; Reports</a></li>
-                    <li class="menu-xrp-portal"><a href="https://ripple.com/xrp-portal/">XRP Portal</a></li>
-                </ul>
-            </section>
-
-            <section class="col-sm-3 widget nav_menu-5 widget_nav_menu">
-                <h4>Regulators<hr></h4>
-                <ul id="menu-compliance-regulatory-relations" class="menu"><li class="menu-compliance"><a href="https://ripple.com/compliance/">Compliance</a></li>
-                    <li class="menu-policy-framework"><a href="https://ripple.com/policy-framework/">Policy Framework</a></li>
-                </ul>
-            </section>
-
-            <section class="col-sm-3 widget nav_menu-4 widget_nav_menu">
-                <h4>Support<hr></h4>
-                <ul id="menu-dev-footer-menu" class="menu">
-                    <li class="menu-contact-us"><a href="https://ripple.com/contact/">Contact Us</a></li>
-                    <li class="active menu-developer-center"><a href="https://ripple.com/build/">Developer Center</a></li>
-                    <li class="menu-knowledge-center"><a href="https://ripple.com/learn/">Knowledge Center</a></li>
-                    <li class="menu-ripple-forum"><a target="_blank" href="https://forum.ripple.com/">Ripple Forum</a></li>
-                </ul>
-            </section>
-
-            <section class="col-sm-3 widget nav_menu-2 widget_nav_menu">
-                <h4>About<hr></h4>
-                <ul id="menu-company-footer" class="menu">
-                    <li class="menu-our-company"><a href="https://ripple.com/company/">Our Company</a></li>
-                    <li class="menu-careers"><a href="https://ripple.com/company/careers/">Careers</a></li>
-                </ul>
-            </section>
-
-       		<div class="col-sm-12 absolute_bottom_footer">
-       			<div class="col-sm-8">
-				    <span>&copy; 2013-2015 Ripple Labs, Inc. All Rights Reserved.</span>
-				    <span><a href="https://ripple.com/terms-of-use/">Terms</a></span>
-				    <span><a href="https://ripple.com/privacy-policy/">Privacy</a></span>
-			    </div>
-       		</div><!-- /.absolute_bottom_footer -->
-       		
-	    </div><!-- /.row -->
-	</div><!-- /.container -->
-</footer>
-</body>
-</html>

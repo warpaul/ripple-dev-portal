@@ -1,154 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
-
-    <title>Freeze - Ripple Developer Portal</title>
-
-    <!-- favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- jQuery -->
-    <script src="assets/vendor/jquery-1.11.1.min.js"></script>
-    
-    <!-- Custom Stylesheets. ripple.css includes bootstrap, font stuff -->
-    <link href="assets/css/ripple.css" rel="stylesheet" />
-    <link href="assets/css/devportal.css" rel="stylesheet" />
-
-    <!-- Bootstrap JS -->
-    <script src="assets/vendor/bootstrap.min.js"></script>
-
-
-    <!-- syntax highlighting -->
-    <link rel="stylesheet" href="assets/vendor/docco.min.css">
-    <script src="assets/vendor/highlight.min.js"></script>
-
-    <!-- syntax selection js -->
-    <script src="assets/js/multicodetab.js"></script>
-    <script>
-        $(document).ready(function() {
-            $().multicode_tabs();
-            hljs.initHighlighting();
-            make_code_expandable();
-        });
-    </script>
-
-    <script src="assets/js/expandcode.js"></script>
-    <script src="assets/js/fixsidebarscroll.js"></script>
-
-</head>
-
-<body class="page page-template page-template-template-dev-portal page-template-template-dev-portal-php sidebar-primary wpb-js-composer js-comp-ver-3.6.2 vc_responsive">
-  <header role="banner" class="banner navbar navbar-default navbar-fixed-top initial_header">
-    <div class="container">
-      <div class="navbar-header">
-          <a href="index.html" class="navbar-brand"><img src="assets/img/ripple-logo-color.png" class="logo"></a>
-      </div><!-- /.navbar-header -->
-      <div class="nav">
-        <div class="draft-warning">DRAFT PAGE</div>
-      </div><!-- /.nav -->
-
-    </div><!-- /.container -->
-
-    <div class="subnav dev_nav">
-      <div class="container">
-        <ul id="menu-dev-menu" class="menu">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">References <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="reference-rippled.html">rippled</a></li>
-                  <li><a href="reference-transaction-format.html">Transaction Format</a></li>
-                  <li><a href="reference-ledger-format.html">Ledger Format</a></li>
-                  <li><a href="reference-rippleapi.html">RippleAPI</a></li>
-                  <li><a href="reference-data-api.html">Ripple Data API v2</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="tutorial-rippleapi-beginners-guide.html">RippleAPI Beginners Guide</a></li>
-                  <li><a href="tutorial-rippled-setup.html">rippled Setup</a></li>
-                  <li><a href="tutorial-reliable-transaction-submission.html">Reliable Transaction Submission</a></li>
-                  <li><a href="tutorial-multisign.html">How to Multi-Sign</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Concepts <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="concept-paths.html">Paths</a></li>
-                  <li><a href="concept-fees.html">Fees (Disambiguation)</a></li>
-                  <li><a href="concept-transfer-fees.html">Transfer Fees</a></li>
-                  <li><a href="concept-transaction-cost.html">Transaction Cost</a></li>
-                  <li><a href="concept-fee-voting.html">Fee Voting</a></li>
-                  <li><a href="concept-reserves.html">Reserves</a></li>
-                  <li><a href="concept-freeze.html">Freeze</a></li>
-                  <li><a href="concept-amendments.html">Amendments</a></li>
-                  <li><a href="concept-stand-alone-mode.html">Stand-Alone Mode</a></li>
-                  <li><a href="concept-noripple.html">Understanding the NoRipple flag</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Best Practices <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="concept-issuing-and-operational-addresses.html">Issuing and Operational Addresses</a></li>
-                  <li><a href="tutorial-gateway-guide.html">Gateway Guide</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">API Tools <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                  <li><a href="ripple-api-tool.html">WebSocket API Tool</a></li>
-                  <li><a href="data-api-v2-tool.html">Data API v2 Tool</a></li>
-                  <li><a href="tool-jsonrpc.html">rippled JSON-RPC Tool</a></li>
-            </ul>
-          </li>
-          
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-			  <li><a href="https://forum.ripple.com/viewforum.php?f=2">Forums</a></li>
-              <li><a href="https://www.bountysource.com/teams/ripple/bounties">Bounties</a></li>
-              <li><a href="https://ripplelabs.atlassian.net/">Bug Tracking</a></li>
-              <li><a href="https://ripple.com/category/dev-blog/">Dev Blog</a></li>
-              <li><a href="https://ripple.com/press-releases/">Press Center</a></li>
-              <li><a href="https://ripple.com/brand-guidelines/">Brand Guidelines</a></li>
-            </ul>
-            <li><a href="https://github.com/ripple/ripple-dev-portal" title="GitHub">Site Source</a></li>
-        </ul><!-- /#dev-menu -->
-      </div><!-- /.subnav .container -->
-    </div><!-- /.subnav -->
-  </header>
-
-
-  <div class="wrap container" role="document">
-      <aside class="sidebar" role="complementary">
-    <div class="dev_nav_wrapper">
-        <div id="cont">
-            <ul class="dev_nav_sidebar">
-                <li class="level-1"><a href="index.html">Category: Concepts</a></li>
-                <li class="level-2"><a href="concept-paths.html">Paths</a></li>
-                <li class="level-2"><a href="concept-fees.html">Fees (Disambiguation)</a></li>
-                <li class="level-2"><a href="concept-transfer-fees.html">Transfer Fees</a></li>
-                <li class="level-2"><a href="concept-transaction-cost.html">Transaction Cost</a></li>
-                <li class="level-2"><a href="concept-fee-voting.html">Fee Voting</a></li>
-                <li class="level-2"><a href="concept-reserves.html">Reserves</a></li>
-                <li class="level-2"><a href="concept-freeze.html">Freeze</a></li>
-                <li class="level-2"><a href="concept-amendments.html">Amendments</a></li>
-                <li class="level-2"><a href="concept-stand-alone-mode.html">Stand-Alone Mode</a></li>
-                <li class="level-2"><a href="concept-noripple.html">Understanding the NoRipple flag</a></li>
-            </ul>
-            <hr />
-            <h5>In this page:</h5>
-        </div>
-    <script type="text/javascript" src="assets/js/jquery.gensidebar.js"></script>
-    </div>
-      </aside>
-      <main class="main" role="main">
-    <div class='content'>
-        <h1 id="freeze-features">Freeze Features</h1>
+<h1 id="freeze-features">Freeze Features</h1>
 <p>The Ripple Consensus Ledger gives accounts the ability to freeze non-XRP balances, which can be useful to comply with regulatory requirements, or while investigating suspicious activity. There are three settings related to freezes:</p>
 <ul>
 <li><a href="#individual-freeze"><strong>Individual Freeze</strong></a> - Freeze one counterparty.</li>
@@ -163,21 +13,21 @@
 <li>Payments can still occur directly between the two parties of the frozen trust line.</li>
 <li>The counterparty of that trust line can no longer decrease its balance on the frozen trust line, except in direct payments to the issuer. The counterparty can only send the frozen issuances directly to the issuer.</li>
 <li>The counterparty can still receive payments from others on the frozen trust line.</li>
-<li>The counterparty's offers to sell the currency issued on the frozen trust line are <a href="reference-transaction-format.html#lifecycle-of-an-offer">considered unfunded</a>.</li>
+<li>The counterparty's offers to sell the currency issued on the frozen trust line are <a href="https://ripple.com/build/transactions/#lifecycle-of-an-offer">considered unfunded</a>.</li>
 </ul>
 <p>A gateway can freeze the trust line linking it to a counterparty if that counterparty shows suspicious activity or violates the gateway's terms of use. The gateway should also freeze the counterparty in any other systems the gateway operates that are connected to the Ripple Consensus Ledger. (Otherwise, an account might still be able to engage in undesired activity by sending payments through the gateway.)</p>
-<p>An individual account can freeze its trust line to a gateway. This has no effect on transactions between the gateway and other users. It does, however, prevent other accounts, including <a href="concept-issuing-and-operational-addresses.html">operational addresses</a>, from sending that gateway's issued currency to the individual account. This type of individual freeze has no effect on offers.</p>
+<p>An individual account can freeze its trust line to a gateway. This has no effect on transactions between the gateway and other users. It does, however, prevent other accounts, including <a href="https://ripple.com/knowledge_center/issuing-operational-addresses/">operational addresses</a>, from sending that gateway's issued currency to the individual account. This type of individual freeze has no effect on offers.</p>
 <p>The Individual Freeze applies to a single currency only. In order to freeze multiple currencies with a particular counterparty, the account must enable Individual Freeze on the trust lines for each currency individually.</p>
 <p>An account cannot enable the Individual Freeze setting if it has previously enabled the <a href="#no-freeze">No Freeze</a> setting.</p>
 <h2 id="global-freeze">Global Freeze</h2>
 <p>The <strong>Global Freeze</strong> feature is a setting on an account. When an issuing account enables the Global Freeze feature, the following rules apply:</p>
 <ul>
-<li>All counterparties of the frozen issuing account can no longer decrease the balances in their trust lines to the frozen account, except in direct payments to the issuer. (This also affects any <a href="concept-issuing-and-operational-addresses.html">operational addresses</a>.)</li>
+<li>All counterparties of the frozen issuing account can no longer decrease the balances in their trust lines to the frozen account, except in direct payments to the issuer. (This also affects any <a href="https://ripple.com/knowledge_center/issuing-operational-addresses/">operational addresses</a>.)</li>
 <li>Counterparties of the frozen issuing account can still send and receive payments directly to and from the issuing account.</li>
-<li>All offers to sell currencies issued by the frozen account are <a href="reference-transaction-format.html#lifecycle-of-an-offer">considered unfunded</a>.</li>
+<li>All offers to sell currencies issued by the frozen account are <a href="https://ripple.com/build/transactions/#lifecycle-of-an-offer">considered unfunded</a>.</li>
 </ul>
-<p>It can be useful to enable Global Freeze on a gateway's <a href="concept-issuing-and-operational-addresses.html">issuing account</a> if the secret key to an operational address is compromised, or immediately after regaining control of a such an address. This stops the flow of funds, preventing attackers from getting away with any more money or at least making it easier to track what happened. In addition to enacting a Global Freeze in the Ripple Consensus Ledger, a financial institution should also suspend activities in its connectors to outside systems.</p>
-<p>It can also be useful to enable Global Freeze if a gateway intends to migrate to a new <a href="concept-issuing-and-operational-addresses.html">issuing account</a>, or if the gateway intends to cease doing business. This locks the funds at a specific point in time, so users cannot trade them away for other currencies.</p>
+<p>It can be useful to enable Global Freeze on a gateway's <a href="https://ripple.com/knowledge_center/issuing-operational-addresses/">issuing account</a> if the secret key to an operational address is compromised, or immediately after regaining control of a such an address. This stops the flow of funds, preventing attackers from getting away with any more money or at least making it easier to track what happened. In addition to enacting a Global Freeze in the Ripple Consensus Ledger, a financial institution should also suspend activities in its connectors to outside systems.</p>
+<p>It can also be useful to enable Global Freeze if a gateway intends to migrate to a new <a href="https://ripple.com/knowledge_center/issuing-operational-addresses/">issuing account</a>, or if the gateway intends to cease doing business. This locks the funds at a specific point in time, so users cannot trade them away for other currencies.</p>
 <p>Global Freeze applies to <em>all</em> currencies issued and held by the account. You cannot enable Global Freeze for only one currency. If you want to have the ability to freeze some currencies and not others, you should use different accounts for each currency.</p>
 <p>An account can always enable the Global Freeze setting. However, if the account has previously enabled the <a href="#no-freeze">No Freeze</a> setting, it can never <em>disable</em> Global Freeze.</p>
 <h2 id="no-freeze">No Freeze</h2>
@@ -188,11 +38,11 @@
 </ul>
 <p>The Ripple Consensus Ledger cannot force a gateway to honor the obligations that its issued funds represent, so giving up the ability to enable a Global Freeze cannot protect customers. However, giving up the ability to <em>disable</em> a Global Freeze ensures that the Global Freeze feature is not used unfairly against some customers.</p>
 <p>The No Freeze setting applies to all currencies issued to and from an account. If you want to be able to freeze some currencies but not others, you should use different accounts for each currency.</p>
-<p>You can only enable the No Freeze setting with a transaction signed by your account's master key. You cannot use a <a href="reference-transaction-format.html#setregularkey">Regular Key</a> or a <a href="reference-transaction-format.html#multi-signing">multi-signed transaction</a> to enable No Freeze.</p>
+<p>You can only enable the No Freeze setting with a transaction signed by your account's master key. You cannot use a <a href="https://ripple.com/build/transactions/#setregularkey">Regular Key</a> or a <a href="https://ripple.com/build/transactions/#multi-signing">multi-signed transaction</a> to enable No Freeze.</p>
 <h1 id="technical-details">Technical Details</h1>
 <h2 id="enabling-or-disabling-individual-freeze">Enabling or Disabling Individual Freeze</h2>
 <h3 id="using-rippled">Using <code>rippled</code></h3>
-<p>To enable or disable Individual Freeze on a specific trust line, send a <code>TrustSet</code> transaction. Use the <a href="reference-transaction-format.html#trustset-flags"><code>tfSetFreeze</code> flag</a> to enable a freeze, and the <code>tfClearFreeze</code> flag to disable it. The fields of the transaction should be as follows:</p>
+<p>To enable or disable Individual Freeze on a specific trust line, send a <code>TrustSet</code> transaction. Use the <a href="https://ripple.com/build/transactions/#trustset-flags"><code>tfSetFreeze</code> flag</a> to enable a freeze, and the <code>tfClearFreeze</code> flag to disable it. The fields of the transaction should be as follows:</p>
 <table>
 <thead>
 <tr>
@@ -239,8 +89,8 @@
 </tr>
 </tbody>
 </table>
-<p>Set the <code>Fee</code>, <code>Sequence</code>, and <code>LastLedgerSequence</code> parameters <a href="reference-transaction-format.html#signing-and-submitting-transactions">in the typical way</a>.</p>
-<p>Example of submitting a TrustSet transaction to enable an individual freeze using the <a href="reference-rippled.html#websocket-api">WebSocket API</a>:</p>
+<p>Set the <code>Fee</code>, <code>Sequence</code>, and <code>LastLedgerSequence</code> parameters <a href="https://ripple.com/build/transactions/#signing-and-submitting-transactions">in the typical way</a>.</p>
+<p>Example of submitting a TrustSet transaction to enable an individual freeze using the <a href="https://ripple.com/build/rippled-apis/#websocket-api">WebSocket API</a>:</p>
 <pre><code>{
   "id": 12,
   "command": "submit",
@@ -264,7 +114,7 @@
 </code></pre>
 <p>(<strong>Reminder</strong>: Never transmit your account secret to an untrusted server or over an insecure channel.)</p>
 <h3 id="using-rippleapi">Using RippleAPI</h3>
-<p>To enable or disable Individual Freeze on a specific trust line, prepare a <em>Trustline</em> transaction using the <a href="reference-rippleapi.html#preparetrustline">prepareTrustline</a> method. The fields of the <code>trustline</code> parameter should be set as follows:</p>
+<p>To enable or disable Individual Freeze on a specific trust line, prepare a <em>Trustline</em> transaction using the <a href="https://ripple.com/build/rippleapi/#preparetrustline">prepareTrustline</a> method. The fields of the <code>trustline</code> parameter should be set as follows:</p>
 <table>
 <thead>
 <tr>
@@ -277,12 +127,12 @@
 <tr>
 <td>currency</td>
 <td>String</td>
-<td>The <a href="reference-rippleapi.html#currency">currency</a> of the trust line to freeze</td>
+<td>The <a href="https://ripple.com/build/rippleapi/#currency">currency</a> of the trust line to freeze</td>
 </tr>
 <tr>
 <td>counterparty</td>
 <td>String</td>
-<td>The <a href="reference-rippleapi.html#ripple-address">Ripple address</a> of the counterparty</td>
+<td>The <a href="https://ripple.com/build/rippleapi/#ripple-address">Ripple address</a> of the counterparty</td>
 </tr>
 <tr>
 <td>limit</td>
@@ -296,7 +146,7 @@
 </tr>
 </tbody>
 </table>
-<p>The rest of the <a href="reference-rippleapi.html#transaction-flow">transaction flow</a> is the same as any other transaction.</p>
+<p>The rest of the <a href="https://ripple.com/build/rippleapi/#transaction-flow">transaction flow</a> is the same as any other transaction.</p>
 <p>Example JavaScript (ECMAScript 6) code to enable Individual Freeze on a trust line:</p>
 <pre><code class="js">const {RippleAPI} = require('ripple-lib');
 
@@ -358,8 +208,8 @@ api.connect().then(() =&gt; {
 </code></pre>
 <h2 id="enabling-or-disabling-global-freeze">Enabling or Disabling Global Freeze</h2>
 <h3 id="using-rippled-1">Using <code>rippled</code></h3>
-<p>To enable Global Freeze on an account, send an <code>AccountSet</code> transaction with the <a href="reference-transaction-format.html#accountset-flags">asfGlobalFreeze flag value</a> in the <code>SetFlag</code> field. To disable Global Freeze, put the asfGlobalFreeze flag value in the <code>ClearFlag</code> field instead.</p>
-<p>Example of submitting an AccountSet transaction to enable Global Freeze using the <a href="reference-rippled.html#websocket-api">WebSocket API</a>:</p>
+<p>To enable Global Freeze on an account, send an <code>AccountSet</code> transaction with the <a href="https://ripple.com/build/transactions/#accountset-flags">asfGlobalFreeze flag value</a> in the <code>SetFlag</code> field. To disable Global Freeze, put the asfGlobalFreeze flag value in the <code>ClearFlag</code> field instead.</p>
+<p>Example of submitting an AccountSet transaction to enable Global Freeze using the <a href="https://ripple.com/build/rippled-apis/#websocket-api">WebSocket API</a>:</p>
 <pre><code>{
   "id": 12,
   "command": "submit",
@@ -379,7 +229,7 @@ api.connect().then(() =&gt; {
 </code></pre>
 <p>(<strong>Reminder</strong>: Never transmit your account secret to an untrusted server or over an insecure channel.)</p>
 <h3 id="using-rippleapi-1">Using RippleAPI</h3>
-<p>To enable or disable Global Freeze on an account, prepare a <strong>Settings</strong> transaction using the <a href="reference-rippleapi.html#preparesettings">prepareSettings</a> method. The <code>settings</code> parameter should be an object set as follows:</p>
+<p>To enable or disable Global Freeze on an account, prepare a <strong>Settings</strong> transaction using the <a href="https://ripple.com/build/rippleapi/#preparesettings">prepareSettings</a> method. The <code>settings</code> parameter should be an object set as follows:</p>
 <table>
 <thead>
 <tr>
@@ -396,7 +246,7 @@ api.connect().then(() =&gt; {
 </tr>
 </tbody>
 </table>
-<p>The rest of the <a href="reference-rippleapi.html#transaction-flow">transaction flow</a> is the same as any other transaction.</p>
+<p>The rest of the <a href="https://ripple.com/build/rippleapi/#transaction-flow">transaction flow</a> is the same as any other transaction.</p>
 <p>Example JavaScript (ECMAScript 6) code to enable Global Freeze on an account:</p>
 <pre><code class="js">const {RippleAPI} = require('ripple-lib');
 
@@ -438,8 +288,8 @@ api.connect().then(() =&gt; {
 </code></pre>
 <h2 id="enabling-no-freeze">Enabling No Freeze</h2>
 <h3 id="using-rippled-2">Using <code>rippled</code></h3>
-<p>To enable No Freeze on an account, send an <code>AccountSet</code> transaction with the <a href="reference-transaction-format.html#accountset-flags">asfNoFreeze flag value</a> in the <code>SetFlag</code> field. You must sign this transaction using the master key. Once enabled, you cannot disable No Freeze.</p>
-<p>Example of submitting an AccountSet transaction to enable No Freeze using the <a href="reference-rippled.html#websocket-api">WebSocket API</a>:</p>
+<p>To enable No Freeze on an account, send an <code>AccountSet</code> transaction with the <a href="https://ripple.com/build/transactions/#accountset-flags">asfNoFreeze flag value</a> in the <code>SetFlag</code> field. You must sign this transaction using the master key. Once enabled, you cannot disable No Freeze.</p>
+<p>Example of submitting an AccountSet transaction to enable No Freeze using the <a href="https://ripple.com/build/rippled-apis/#websocket-api">WebSocket API</a>:</p>
 <p>WebSocket request:</p>
 <pre><code>{
   "id": 12,
@@ -460,7 +310,7 @@ api.connect().then(() =&gt; {
 </code></pre>
 <p>(<strong>Reminder</strong>: Never transmit your account secret to an untrusted server or over an insecure channel.)</p>
 <h3 id="using-rippleapi-2">Using RippleAPI</h3>
-<p>To enable No Freeze on an account, prepare a <strong>Settings</strong> transaction using the <a href="reference-rippleapi.html#preparesettings">prepareSettings</a> method. Once enabled, you cannot disable No Freeze. The <code>settings</code> parameter should be an object set as follows:</p>
+<p>To enable No Freeze on an account, prepare a <strong>Settings</strong> transaction using the <a href="https://ripple.com/build/rippleapi/#preparesettings">prepareSettings</a> method. Once enabled, you cannot disable No Freeze. The <code>settings</code> parameter should be an object set as follows:</p>
 <table>
 <thead>
 <tr>
@@ -477,7 +327,7 @@ api.connect().then(() =&gt; {
 </tr>
 </tbody>
 </table>
-<p>You must <a href="reference-rippleapi.html#sign">sign</a> this transaction using the master key. The rest of the <a href="reference-rippleapi.html#transaction-flow">transaction flow</a> is the same as any other transaction.</p>
+<p>You must <a href="https://ripple.com/build/rippleapi/#sign">sign</a> this transaction using the master key. The rest of the <a href="https://ripple.com/build/rippleapi/#transaction-flow">transaction flow</a> is the same as any other transaction.</p>
 <p>Example JavaScript (ECMAScript 6) code to enable No Freeze on an account:</p>
 <pre><code class="js">const {RippleAPI} = require('ripple-lib');
 
@@ -518,7 +368,7 @@ api.connect().then(() =&gt; {
 </code></pre>
 <h2 id="checking-for-individual-freeze">Checking for Individual Freeze</h2>
 <h3 id="using-rippled-3">Using <code>rippled</code></h3>
-<p>To see if a trust line has an Individual Freeze enabled, use the <a href="reference-rippled.html#account-lines"><code>account_lines</code> method</a> with the following parameters:</p>
+<p>To see if a trust line has an Individual Freeze enabled, use the <a href="https://ripple.com/build/rippled-apis/#account-lines"><code>account_lines</code> method</a> with the following parameters:</p>
 <table>
 <thead>
 <tr>
@@ -601,7 +451,7 @@ api.connect().then(() =&gt; {
 </code></pre>
 <p>The field <code>"freeze": true</code> indicates that rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn has enabled Individual Freeze on the USD trust line to rsA2LpzuawewSBQXkiju3YQTMzW13pAAdW. The lack of a field <code>"freeze_peer": true</code> indicates that the counterparty has <em>not</em> frozen the trust line.</p>
 <h3 id="using-rippleapi-3">Using RippleAPI</h3>
-<p>To see if a trust line has an Individual Freeze enabled, use the <a href="reference-rippleapi.html#gettrustlines"><code>getTrustlines</code> method</a> with the following parameters:</p>
+<p>To see if a trust line has an Individual Freeze enabled, use the <a href="https://ripple.com/build/rippleapi/#gettrustlines"><code>getTrustlines</code> method</a> with the following parameters:</p>
 <table>
 <thead>
 <tr>
@@ -686,7 +536,7 @@ api.connect().then(() =&gt; {
 </code></pre>
 <h2 id="checking-for-global-freeze-and-no-freeze">Checking for Global Freeze and No Freeze</h2>
 <h3 id="using-rippled-4">Using <code>rippled</code></h3>
-<p>To see if an account has Global Freeze and/or No Freeze enabled, use the <a href="reference-rippled.html#account-lines"><code>account_info</code> method</a> with the following parameters:</p>
+<p>To see if an account has Global Freeze and/or No Freeze enabled, use the <a href="https://ripple.com/build/rippled-apis/#account-lines"><code>account_info</code> method</a> with the following parameters:</p>
 <table>
 <thead>
 <tr>
@@ -710,8 +560,8 @@ api.connect().then(() =&gt; {
 </table>
 <p>Check the value of the <code>account_data.Flags</code> field of the response using the <a href="https://en.wikipedia.org/wiki/Bitwise_operation#AND">bitwise-AND</a> operator:</p>
 <ul>
-<li>If <code>Flags</code> AND <code>0x00400000</code> (<a href="reference-ledger-format.html#accountroot-flags">lsfGlobalFreeze</a>) is <em>nonzero</em>: Global Freeze is enabled.</li>
-<li>If <code>Flags</code> AND <code>0x00200000</code> (<a href="reference-ledger-format.html#accountroot-flags">lsfNoFreeze</a>) is <em>nonzero</em>: No Freeze is enabled.</li>
+<li>If <code>Flags</code> AND <code>0x00400000</code> (<a href="https://ripple.com/build/ledger-format/#accountroot-flags">lsfGlobalFreeze</a>) is <em>nonzero</em>: Global Freeze is enabled.</li>
+<li>If <code>Flags</code> AND <code>0x00200000</code> (<a href="https://ripple.com/build/ledger-format/#accountroot-flags">lsfNoFreeze</a>) is <em>nonzero</em>: No Freeze is enabled.</li>
 </ul>
 <p>Example WebSocket request:</p>
 <pre><code>{
@@ -763,7 +613,7 @@ console.log(currentFlags &amp; lsfNoFreeze); //0
 //therefore, No Freeze is not enabled
 </code></pre>
 <h3 id="using-rippleapi-4">Using RippleAPI</h3>
-<p>To see if an account has Global Freeze and/or No Freeze enabled, use the <a href="reference-rippleapi.html#getsettings"><code>getSettings</code> method</a> with the following parameters:</p>
+<p>To see if an account has Global Freeze and/or No Freeze enabled, use the <a href="https://ripple.com/build/rippleapi/#getsettings"><code>getSettings</code> method</a> with the following parameters:</p>
 <table>
 <thead>
 <tr>
@@ -832,61 +682,3 @@ api.connect().then(() =&gt; {
 <li><a href="https://ripple.com/files/GB-2014-02.pdf">Gateway Bulletin GB-2014-02 New Feature: Balance Freeze</a></li>
 <li><a href="https://github.com/ripple/ripple-dev-portal/tree/gh-pages/content/code_samples/freeze">Freeze Code Samples</a></li>
 </ul>
-    </div>
-      </main>
-  </div>
-
-<footer class="content-info" role="contentinfo">
-    <div class="container">
-        <div class="row">
-
-       		<section class="col-sm-3 widget nav_menu-3 widget_nav_menu">
-   		        <h4>Resources<hr></h4>
-   		        <ul id="menu-resources" class="menu">
-   		            <li class="menu-insights"><a href="https://ripple.com/insights/">Insights</a></li>
-	                <li class="menu-press-center"><a href="https://ripple.com/press-center/">Press Center</a></li>
-                    <li class="menu-media-resources"><a href="https://ripple.com/media-resources/">Media Resources</a></li>
-                    <li class="menu-videos"><a href="https://ripple.com/videos/">Videos</a></li>
-                    <li class="menu-whitepapers-reports"><a href="https://ripple.com/whitepapers-reports/">Whitepapers &#038; Reports</a></li>
-                    <li class="menu-xrp-portal"><a href="https://ripple.com/xrp-portal/">XRP Portal</a></li>
-                </ul>
-            </section>
-
-            <section class="col-sm-3 widget nav_menu-5 widget_nav_menu">
-                <h4>Regulators<hr></h4>
-                <ul id="menu-compliance-regulatory-relations" class="menu"><li class="menu-compliance"><a href="https://ripple.com/compliance/">Compliance</a></li>
-                    <li class="menu-policy-framework"><a href="https://ripple.com/policy-framework/">Policy Framework</a></li>
-                </ul>
-            </section>
-
-            <section class="col-sm-3 widget nav_menu-4 widget_nav_menu">
-                <h4>Support<hr></h4>
-                <ul id="menu-dev-footer-menu" class="menu">
-                    <li class="menu-contact-us"><a href="https://ripple.com/contact/">Contact Us</a></li>
-                    <li class="active menu-developer-center"><a href="https://ripple.com/build/">Developer Center</a></li>
-                    <li class="menu-knowledge-center"><a href="https://ripple.com/learn/">Knowledge Center</a></li>
-                    <li class="menu-ripple-forum"><a target="_blank" href="https://forum.ripple.com/">Ripple Forum</a></li>
-                </ul>
-            </section>
-
-            <section class="col-sm-3 widget nav_menu-2 widget_nav_menu">
-                <h4>About<hr></h4>
-                <ul id="menu-company-footer" class="menu">
-                    <li class="menu-our-company"><a href="https://ripple.com/company/">Our Company</a></li>
-                    <li class="menu-careers"><a href="https://ripple.com/company/careers/">Careers</a></li>
-                </ul>
-            </section>
-
-       		<div class="col-sm-12 absolute_bottom_footer">
-       			<div class="col-sm-8">
-				    <span>&copy; 2013-2015 Ripple Labs, Inc. All Rights Reserved.</span>
-				    <span><a href="https://ripple.com/terms-of-use/">Terms</a></span>
-				    <span><a href="https://ripple.com/privacy-policy/">Privacy</a></span>
-			    </div>
-       		</div><!-- /.absolute_bottom_footer -->
-       		
-	    </div><!-- /.row -->
-	</div><!-- /.container -->
-</footer>
-</body>
-</html>
