@@ -1,3 +1,4 @@
+<div class="content">
 <h1 id="ripple-data-api-v2">Ripple Data API v2</h1>
 <p>The Ripple Data API v2 provides access to information about changes in the Ripple Consensus Ledger, including transaction history and processed analytical data. This information is stored in a database for easy access, which frees <code>rippled</code> servers to maintain fewer historical ledger versions. Additionally, the Data API v2 acts as data source for applications such as <a href="https://www.ripplecharts.com/">Ripple Charts</a> and <a href="https://www.ripple.com">ripple.com</a>.</p>
 <p>Ripple provides a live instance of the Data API with as complete a transaction record as possible at the following address:</p>
@@ -5979,3 +5980,4 @@ $ node import/live
 <pre><code>// get ledgers #1,000,000 to #2,000,000 (inclusive) and store in HBase
 node import/hbase/backfill --startIndex 2000000 --stopIndex 1000000
 </code></pre>
+</div>

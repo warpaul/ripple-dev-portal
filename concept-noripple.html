@@ -1,3 +1,4 @@
+<div class="content">
 <h1 id="understanding-the-noripple-flag">Understanding the NoRipple Flag</h1>
 <p>In the Ripple Consensus Ledger (RCL), the "NoRipple" flag is a setting on a trust line. When an address enables the NoRipple flag on two trust lines, payments from third parties cannot "ripple" through that address on those trust lines. This protects liquidity providers from having balances shift unexpectedly between different issuers of the same currency.</p>
 <h2 id="background">Background</h2>
@@ -27,3 +28,4 @@
 <p>In the case of two accounts that mutually trust each other, the NoRipple flag is tracked separately for each account.</p>
 <p>In the <a href="https://ripple.com/build/rippled-apis/"><code>rippled</code> APIs</a>, you can use the <a href="https://ripple.com/build/rippled-apis/#account-lines">account_lines method</a> to look up the trust lines associated with an address. For each trust line, the <code>no_ripple</code> field shows whether the current address has enabled the NoRipple flag on that trust line, and the <code>no_ripple_peer</code> field shows whether the counterparty has enabled the NoRipple flag.</p>
 <p>In <a href="https://ripple.com/build/rippleapi/">RippleAPI</a>, you can use the <a href="https://ripple.com/build/rippleapi/#gettrustlines">getTrustlines</a> method to look up the trust lines associated with an address. For each trust line, the <code>ripplingDisabled</code> field shows whether the current address has enabled the NoRipple flag on that trust line, and the <code>counterparty.ripplingDisabled</code> field shows whether the counterparty has enabled the NoRipple flag.</p>
+</div>
