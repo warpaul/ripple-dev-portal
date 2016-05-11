@@ -1,5 +1,31 @@
-<div class="content">
-<h1 id="transaction-cost">Transaction Cost</h1>
+<div class='devportal_wrapper'>
+  <aside class='sidebar' role='complementary'>
+    <ul class='dev_nav_sidebar' id='dactyl_toc_sidebar'>
+        <li class="level-1"><a href="#transaction-cost">Transaction Cost</a></li>
+<li class="level-2"><a href="#current-transaction-cost">Current Transaction Cost</a></li>
+<li class="level-3"><a href="#special-transaction-costs">Special Transaction Costs</a></li>
+<li class="level-2"><a href="#beneficiaries-of-the-transaction-cost">Beneficiaries of the Transaction Cost</a></li>
+<li class="level-2"><a href="#load-cost-and-open-ledger-cost">Load Cost and Open Ledger Cost</a></li>
+<li class="level-2"><a href="#local-load-cost">Local Load Cost</a></li>
+<li class="level-2"><a href="#open-ledger-cost">Open Ledger Cost</a></li>
+<li class="level-3"><a href="#queued-transactions">Queued Transactions</a></li>
+<li class="level-2"><a href="#reference-transaction-cost">Reference Transaction Cost</a></li>
+<li class="level-3"><a href="#fee-levels">Fee Levels</a></li>
+<li class="level-2"><a href="#querying-the-transaction-cost">Querying the Transaction Cost</a></li>
+<li class="level-3"><a href="#server-info">server_info</a></li>
+<li class="level-3"><a href="#server-state">server_state</a></li>
+<li class="level-2"><a href="#specifying-the-transaction-cost">Specifying the Transaction Cost</a></li>
+<li class="level-3"><a href="#automatically-specifying-the-transaction-cost">Automatically Specifying the Transaction Cost</a></li>
+<li class="level-2"><a href="#transaction-costs-and-failed-transactions">Transaction Costs and Failed Transactions</a></li>
+<li class="level-3"><a href="#insufficient-xrp">Insufficient XRP</a></li>
+<li class="level-2"><a href="#key-reset-transaction">Key Reset Transaction</a></li>
+<li class="level-2"><a href="#changing-the-transaction-cost">Changing the Transaction Cost</a></li>
+
+    </ul>
+  </aside>
+  <main class='main' role='main'>
+    <div class='content'>
+      <h1 id="transaction-cost">Transaction Cost</h1>
 <p>In order to protect the Ripple Consensus Ledger from being disrupted by spam and denial-of-service attacks, each transaction must destroy a small amount of <a href="https://ripple.com/knowledge_center/math-based-currency-2/">XRP</a>. This <em>transaction cost</em> is designed to increase along with the load on the network, making it very expensive to deliberately or inadvertently overload the network.</p>
 <p>Every transaction must <a href="#specifying-the-transaction-cost">specify how much XRP it will destroy</a> in order to pay the transaction cost.</p>
 <h2 id="current-transaction-cost">Current Transaction Cost</h2>
@@ -136,4 +162,6 @@
 <p>When the <a href="https://ripple.com/build/amendments/#feeescalation">FeeEscalation amendment</a> is enabled, <code>rippled</code> prioritizes key reset transactions above other transactions even though the nominal transaction cost of a key reset transaction is zero.</p>
 <h2 id="changing-the-transaction-cost">Changing the Transaction Cost</h2>
 <p>In addition to short-term scaling to account for load, the Ripple Consensus Ledger has a mechanism for changing the minimum transaction cost in order to account for long-term changes in the value of XRP. Any changes have to be approved by the consensus process. See <a href="https://ripple.com/build/fee-voting/">Fee Voting</a> for more information.</p>
+    </div>
+  </main>
 </div>

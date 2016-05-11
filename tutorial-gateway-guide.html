@@ -1,5 +1,51 @@
-<div class="content">
-<h1 id="becoming-a-ripple-gateway">Becoming a Ripple Gateway</h1>
+<div class='devportal_wrapper'>
+  <aside class='sidebar' role='complementary'>
+    <ul class='dev_nav_sidebar' id='dactyl_toc_sidebar'>
+        <li class="level-1"><a href="#becoming-a-ripple-gateway">Becoming a Ripple Gateway</a></li>
+<li class="level-2"><a href="#contact-information">Contact Information</a></li>
+<li class="level-2"><a href="#ripple-gateways-explained">Ripple Gateways Explained</a></li>
+<li class="level-3"><a href="#ripple-trust-lines-and-issuances">Ripple Trust Lines and Issuances</a></li>
+<li class="level-3"><a href="#xrp">XRP</a></li>
+<li class="level-3"><a href="#liquidity-and-currency-exchange">Liquidity and Currency Exchange</a></li>
+<li class="level-2"><a href="#suggested-business-practices">Suggested Business Practices</a></li>
+<li class="level-3"><a href="#hot-and-cold-wallets">Hot and Cold Wallets</a></li>
+<li class="level-2"><a href="#fees-and-revenue-sources">Fees and Revenue Sources</a></li>
+<li class="level-3"><a href="#choosing-fee-rates">Choosing Fee Rates</a></li>
+<li class="level-1"><a href="#ripple-integration">Ripple Integration</a></li>
+<li class="level-2"><a href="#before-ripple-integration">Before Ripple Integration</a></li>
+<li class="level-2"><a href="#sending-from-gateway-to-ripple">Sending from Gateway to Ripple</a></li>
+<li class="level-3"><a href="#requirements-for-sending-to-rcl">Requirements for Sending to RCL</a></li>
+<li class="level-2"><a href="#sending-from-rcl-to-gateway">Sending from RCL to Gateway</a></li>
+<li class="level-3"><a href="#requirements-for-receiving-from-rcl">Requirements for Receiving from RCL</a></li>
+<li class="level-2"><a href="#precautions">Precautions</a></li>
+<li class="level-2"><a href="#trading-on-ripple">Trading on Ripple</a></li>
+<li class="level-2"><a href="#freeze">Freeze</a></li>
+<li class="level-2"><a href="#authorized-accounts">Authorized Accounts</a></li>
+<li class="level-2"><a href="#source-and-destination-tags">Source and Destination Tags</a></li>
+<li class="level-1"><a href="#technical-details">Technical Details</a></li>
+<li class="level-2"><a href="#infrastructure">Infrastructure</a></li>
+<li class="level-3"><a href="#apis-and-middleware">APIs and Middleware</a></li>
+<li class="level-2"><a href="#tool-security">Tool Security</a></li>
+<li class="level-2"><a href="#defaultripple">DefaultRipple</a></li>
+<li class="level-2"><a href="#generating-source-and-destination-tags">Generating Source and Destination Tags</a></li>
+<li class="level-2"><a href="#disallowxrp">DisallowXRP</a></li>
+<li class="level-2"><a href="#requiredest">RequireDest</a></li>
+<li class="level-2"><a href="#requireauth">RequireAuth</a></li>
+<li class="level-3"><a href="#enabling-requireauth">Enabling RequireAuth</a></li>
+<li class="level-3"><a href="#authorizing-trust-lines">Authorizing Trust Lines</a></li>
+<li class="level-2"><a href="#robustly-monitoring-for-payments">Robustly Monitoring for Payments</a></li>
+<li class="level-2"><a href="#transferrate">TransferRate</a></li>
+<li class="level-3"><a href="#transferrate-with-operational-and-standby-addresses">TransferRate with Operational and Standby Addresses</a></li>
+<li class="level-2"><a href="#sending-payments-to-customers">Sending Payments to Customers</a></li>
+<li class="level-2"><a href="#bouncing-payments">Bouncing Payments</a></li>
+<li class="level-2"><a href="#reliable-transaction-submission">Reliable Transaction Submission</a></li>
+<li class="level-2"><a href="#rippletxt">ripple.txt</a></li>
+
+    </ul>
+  </aside>
+  <main class='main' role='main'>
+    <div class='content'>
+      <h1 id="becoming-a-ripple-gateway">Becoming a Ripple Gateway</h1>
 <p>If you have an existing online financial system, you can expand it to act as a gateway in the the Ripple Consensus Ledger (RCL). <a href="https://ripple.com/knowledge_center/gateways/">Gateways</a> are the businesses that link the Ripple Consensus Ledger to the rest of the world. By becoming a Ripple gateway, existing online financial services, such as payment systems and digital currency exchange, can gain several advantages:</p>
 <ul>
 <li>By enabling its customers to send and receive value in the Ripple Consensus Ledger, the business increases its value proposition to customers.</li>
@@ -562,4 +608,6 @@ Content-Type: application/json
 <h2 id="rippletxt">ripple.txt</h2>
 <p>The <a href="https://wiki.ripple.com/Ripple.txt">ripple.txt</a> standard provides a way to publish information about your gateway so that automated tools and applications can read and understand it.</p>
 <p>For example, if you run a validating <code>rippled</code> server, you can use ripple.txt to publish the public key of your validating server. You can also publish information about what currencies your gateway issues, and which Ripple addresses you control, to protect against impostors or confusion.</p>
+    </div>
+  </main>
 </div>

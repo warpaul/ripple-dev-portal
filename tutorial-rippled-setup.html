@@ -1,5 +1,33 @@
-<div class="content">
-<h1 id="operating-rippled-servers">Operating rippled Servers</h1>
+<div class='devportal_wrapper'>
+  <aside class='sidebar' role='complementary'>
+    <ul class='dev_nav_sidebar' id='dactyl_toc_sidebar'>
+        <li class="level-1"><a href="#operating-rippled-servers">Operating rippled Servers</a></li>
+<li class="level-2"><a href="#types-of-rippled-servers">Types of rippled Servers</a></li>
+<li class="level-2"><a href="#reasons-to-run-a-stock-server">Reasons to Run a Stock Server</a></li>
+<li class="level-2"><a href="#reasons-to-run-a-validator">Reasons to Run a Validator</a></li>
+<li class="level-3"><a href="#properties-of-a-good-validator">Properties of a Good Validator</a></li>
+<li class="level-1"><a href="#installing-rippled">Installing rippled</a></li>
+<li class="level-2"><a href="#system-requirements">System Requirements</a></li>
+<li class="level-2"><a href="#installation-on-centosred-hat-with-yum">Installation on CentOS/Red Hat with yum</a></li>
+<li class="level-2"><a href="#updating-rippled">Updating rippled</a></li>
+<li class="level-3"><a href="#automatic">Automatic</a></li>
+<li class="level-3"><a href="#manual">Manual</a></li>
+<li class="level-1"><a href="#running-a-validator">Running a Validator</a></li>
+<li class="level-2"><a href="#validator-setup">Validator Setup</a></li>
+<li class="level-2"><a href="#public-facing-server">Public-Facing Server</a></li>
+<li class="level-2"><a href="#domain-verification">Domain Verification</a></li>
+<li class="level-3"><a href="#rippletxt">ripple.txt </a></li>
+<li class="level-3"><a href="#account-domain">Account domain</a></li>
+<li class="level-1"><a href="#additional-configuration">Additional Configuration</a></li>
+<li class="level-2"><a href="#parallel-networks">Parallel Networks</a></li>
+<li class="level-3"><a href="#parallel-networks-and-consensus">Parallel Networks and Consensus</a></li>
+<li class="level-2"><a href="#clustering">Clustering</a></li>
+
+    </ul>
+  </aside>
+  <main class='main' role='main'>
+    <div class='content'>
+      <h1 id="operating-rippled-servers">Operating rippled Servers</h1>
 <p>The core server of the Ripple peer-to-peer network is <a href="https://ripple.com/build/rippled-apis/"><code>rippled</code></a>. Anyone can run their own <code>rippled</code> server that follows the network and keeps a complete copy of the Ripple ledger. You can even have your server perform validations and participate in the consensus process.</p>
 <p>This page contains instructions for:</p>
 <ul>
@@ -278,4 +306,6 @@ ssdecohJMDPFuUPDkmG1w4objZyp4
 </li>
 <li>Add the public keys (for peer communication) of each of your other servers under the <code>[cluster_nodes]</code> section.</li>
 </ul>
+    </div>
+  </main>
 </div>

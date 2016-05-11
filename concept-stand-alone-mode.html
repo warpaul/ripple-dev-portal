@@ -1,5 +1,22 @@
-<div class="content">
-<h1 id="stand-alone-mode">Stand-Alone Mode</h1>
+<div class='devportal_wrapper'>
+  <aside class='sidebar' role='complementary'>
+    <ul class='dev_nav_sidebar' id='dactyl_toc_sidebar'>
+        <li class="level-1"><a href="#stand-alone-mode">Stand-Alone Mode</a></li>
+<li class="level-2"><a href="#new-genesis-ledger">New Genesis Ledger</a></li>
+<li class="level-2"><a href="#load-saved-ledger">Load Saved Ledger</a></li>
+<li class="level-3"><a href="#1-start-rippled-normally">1. Start  rippled  normally.</a></li>
+<li class="level-3"><a href="#2-wait-until-rippled-is-synced">2. Wait until  rippled  is synced.</a></li>
+<li class="level-3"><a href="#3-optional-retrieve-specific-ledger-versions">3. (Optional) Retrieve specific ledger versions.</a></li>
+<li class="level-3"><a href="#4-shut-down-rippled">4. Shut down  rippled .</a></li>
+<li class="level-3"><a href="#5-start-rippled-in-stand-alone-mode">5. Start  rippled  in stand-alone mode.</a></li>
+<li class="level-3"><a href="#6-manually-advance-the-ledger">6. Manually advance the ledger.</a></li>
+<li class="level-2"><a href="#advancing-ledgers-in-stand-alone-mode">Advancing Ledgers in Stand-Alone Mode</a></li>
+
+    </ul>
+  </aside>
+  <main class='main' role='main'>
+    <div class='content'>
+      <h1 id="stand-alone-mode">Stand-Alone Mode</h1>
 <p>You can run <code>rippled</code> in stand-alone mode without a consensus of trusted servers. In stand-alone mode, <code>rippled</code> does not communicate with any other servers in the Ripple peer-to-peer network, but you can do most of the same actions on your local server only. Stand-alone provides a method for testing <code>rippled</code> behavior without being tied to the live network. For example, you can <a href="https://ripple.com/build/amendments/#testing-amendments">test the effects of Amendments</a> before those Amendments have gone into effect across the decentralized network.</p>
 <p>When you run <code>rippled</code> in stand-alone mode, you have to tell it what ledger version to start from:</p>
 <ul>
@@ -57,4 +74,6 @@
 </code></pre>
 <p>In stand-alone mode, <code>rippled</code> makes no distinction between a "closed" ledger version and a "validated" ledger version. (For more information about the difference, see <a href="https://ripple.com/knowledge_center/the-ripple-ledger-consensus-process/">The Ripple Ledger Consensus Process</a>.)</p>
 <p>Whenever <code>rippled</code> closes a ledger, it reorders the transactions according to a deterministic but hard-to-game algorithm. (This is an important part of consensus, since transactions may arrive at different parts of the network in different order.) When using <code>rippled</code> in stand-alone mode, you should manually advance the ledger before submitting a transaction that depends on the result of a transaction from a different address. Otherwise, the two transactions might be executed in reverse order when the ledger is closed. <strong>Note:</strong> You can safely submit multiple transactions from a single address to a single ledger, because <code>rippled</code> sorts transactions from the same address in ascending order by <a href="https://ripple.com/build/transactions/#common-fields"><code>Sequence</code> number</a>.</p>
+    </div>
+  </main>
 </div>

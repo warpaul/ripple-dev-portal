@@ -1,5 +1,19 @@
-<div class="content">
-<h1 id="understanding-the-noripple-flag">Understanding the NoRipple Flag</h1>
+<div class='devportal_wrapper'>
+  <aside class='sidebar' role='complementary'>
+    <ul class='dev_nav_sidebar' id='dactyl_toc_sidebar'>
+        <li class="level-1"><a href="#understanding-the-noripple-flag">Understanding the NoRipple Flag</a></li>
+<li class="level-2"><a href="#background">Background</a></li>
+<li class="level-2"><a href="#justification">Justification</a></li>
+<li class="level-2"><a href="#specifics">Specifics</a></li>
+<li class="level-2"><a href="#technical-details">Technical Details</a></li>
+<li class="level-3"><a href="#enabling-disabling-noripple">Enabling / Disabling NoRipple</a></li>
+<li class="level-3"><a href="#looking-up-noripple-status">Looking Up NoRipple Status</a></li>
+
+    </ul>
+  </aside>
+  <main class='main' role='main'>
+    <div class='content'>
+      <h1 id="understanding-the-noripple-flag">Understanding the NoRipple Flag</h1>
 <p>In the Ripple Consensus Ledger (RCL), the "NoRipple" flag is a setting on a trust line. When an address enables the NoRipple flag on two trust lines, payments from third parties cannot "ripple" through that address on those trust lines. This protects liquidity providers from having balances shift unexpectedly between different issuers of the same currency.</p>
 <h2 id="background">Background</h2>
 <p>"Rippling" occurs when more than one trust line is adjusted in order to make a payment. For example, if Alice owes Charlie money, and Alice also owes Bob money, then you could represent that in Ripple with trust lines like so:</p>
@@ -28,4 +42,6 @@
 <p>In the case of two accounts that mutually trust each other, the NoRipple flag is tracked separately for each account.</p>
 <p>In the <a href="https://ripple.com/build/rippled-apis/"><code>rippled</code> APIs</a>, you can use the <a href="https://ripple.com/build/rippled-apis/#account-lines">account_lines method</a> to look up the trust lines associated with an address. For each trust line, the <code>no_ripple</code> field shows whether the current address has enabled the NoRipple flag on that trust line, and the <code>no_ripple_peer</code> field shows whether the counterparty has enabled the NoRipple flag.</p>
 <p>In <a href="https://ripple.com/build/rippleapi/">RippleAPI</a>, you can use the <a href="https://ripple.com/build/rippleapi/#gettrustlines">getTrustlines</a> method to look up the trust lines associated with an address. For each trust line, the <code>ripplingDisabled</code> field shows whether the current address has enabled the NoRipple flag on that trust line, and the <code>counterparty.ripplingDisabled</code> field shows whether the counterparty has enabled the NoRipple flag.</p>
+    </div>
+  </main>
 </div>

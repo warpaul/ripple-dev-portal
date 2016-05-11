@@ -1,5 +1,17 @@
-<div class="content">
-<h1 id="reserves">Reserves</h1>
+<div class='devportal_wrapper'>
+  <aside class='sidebar' role='complementary'>
+    <ul class='dev_nav_sidebar' id='dactyl_toc_sidebar'>
+        <li class="level-1"><a href="#reserves">Reserves</a></li>
+<li class="level-2"><a href="#base-reserve-and-owner-reserve">Base Reserve and Owner Reserve</a></li>
+<li class="level-3"><a href="#owner-reserves">Owner Reserves</a></li>
+<li class="level-2"><a href="#going-below-the-reserve-requirement">Going Below the Reserve Requirement</a></li>
+<li class="level-2"><a href="#changing-the-reserve-requirements">Changing the Reserve Requirements</a></li>
+
+    </ul>
+  </aside>
+  <main class='main' role='main'>
+    <div class='content'>
+      <h1 id="reserves">Reserves</h1>
 <p>The Ripple Consensus Ledger applies <em>reserve requirements</em>, in XRP, to protect the shared global ledger from growing excessively large as the result of spam or malicious usage. The goal is to constrain the growth of the ledger to match <a href="https://en.wikipedia.org/wiki/Moore's_law">Moore's Law</a> so that a current commodity-level machine can always fit the current ledger in RAM and the full ledger history on disk.</p>
 <p>Each account in the shared global ledger must hold a minimum of XRP in order to submit transactions, and it cannot send this XRP to other accounts. You cannot create a new account unless you send enough XRP to meet the minimum reserve requirement.</p>
 <p>The current minimum reserve requirement is <strong>20 XRP</strong>. (This is the cost of an account that owns no additional objects in the ledger.)</p>
@@ -25,4 +37,6 @@
 <p><strong>Exception:</strong> When an account is below the reserve requirement, it can send new <a href="https://ripple.com/build/transactions/#offercreate">OfferCreate transactions</a> to acquire more XRP, or other currencies on its existing trust lines. These transactions cannot create new <a href="https://ripple.com/build/ledger-format/#ripplestate">trust lines</a>, or <a href="https://ripple.com/build/ledger-format/#offer">Offer nodes in the ledger</a>, so they can only execute trades that consume Offers that are already in the order books.</p>
 <h2 id="changing-the-reserve-requirements">Changing the Reserve Requirements</h2>
 <p>The Ripple Consensus Ledger has a mechanism for changing the reserve requirements in order to account for long-term changes in the value of XRP. Any changes have to be approved by the consensus process. See <a href="https://ripple.com/build/fee-voting/">Fee Voting</a> for more information.</p>
+    </div>
+  </main>
 </div>

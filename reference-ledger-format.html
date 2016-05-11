@@ -1,5 +1,33 @@
-<div class="content">
-<h1 id="the-ledger">The Ledger</h1>
+<div class='devportal_wrapper'>
+  <aside class='sidebar' role='complementary'>
+    <ul class='dev_nav_sidebar' id='dactyl_toc_sidebar'>
+        <li class="level-1"><a href="#the-ledger">The Ledger</a></li>
+<li class="level-2"><a href="#tree-format">Tree Format</a></li>
+<li class="level-2"><a href="#header-format">Header Format</a></li>
+<li class="level-3"><a href="#ledger-index">Ledger Index</a></li>
+<li class="level-3"><a href="#close-flags">Close Flags</a></li>
+<li class="level-1"><a href="#ledger-node-types">Ledger Node Types</a></li>
+<li class="level-2"><a href="#accountroot">AccountRoot</a></li>
+<li class="level-3"><a href="#accountroot-flags">AccountRoot Flags</a></li>
+<li class="level-3"><a href="#accountroot-index-format">AccountRoot Index Format</a></li>
+<li class="level-2"><a href="#directorynode">DirectoryNode</a></li>
+<li class="level-3"><a href="#directory-index-formats">Directory Index Formats</a></li>
+<li class="level-2"><a href="#offer">Offer</a></li>
+<li class="level-3"><a href="#offer-flags">Offer Flags</a></li>
+<li class="level-3"><a href="#offer-index-format">Offer Index Format</a></li>
+<li class="level-2"><a href="#ripplestate">RippleState</a></li>
+<li class="level-3"><a href="#ripplestate-flags">RippleState Flags</a></li>
+<li class="level-3"><a href="#contributing-to-the-owner-reserve">Contributing to the Owner Reserve</a></li>
+<li class="level-3"><a href="#ripplestate-index-format">RippleState Index Format</a></li>
+<li class="level-2"><a href="#signerlist">SignerList</a></li>
+<li class="level-3"><a href="#signerentry-object">SignerEntry Object</a></li>
+<li class="level-3"><a href="#signerlists-and-reserves">SignerLists and Reserves</a></li>
+
+    </ul>
+  </aside>
+  <main class='main' role='main'>
+    <div class='content'>
+      <h1 id="the-ledger">The Ledger</h1>
 <p>The point of the Ripple software is to maintain a shared, global ledger that is open to all, so that individual participants can trust the integrity of the ledger without having to trust any single institution to manage it. The <code>rippled</code> server software accomplishes this by maintaining a ledger database that can only be updated according to very specific rules. Each instance of <code>rippled</code> maintains a full copy of the ledger, and the peer-to-peer network of <code>rippled</code> servers distributes candidate transactions among themselves. The consensus process determines which transactions get applied to each new version of the ledger. See also: <a href="https://ripple.com/knowledge_center/the-ripple-ledger-consensus-process/">The Consensus Process</a>.</p>
 <p><img alt="Diagram: Each ledger is the result of applying transactions to the previous ledger version." src="https://ripple.com/wp-content/themes/ripple-beta/assets/img/ledger-process.png"/></p>
 <p>The shared global ledger is actually a series of individual ledgers, or ledger versions, which <code>rippled</code> keeps in its internal database. Every ledger version has a <a href="#ledger-index">ledger index</a> which identifies the order in which ledgers occur. Each closed ledger version also has an identifying hash value, which uniquely identifies the contents of that ledger. At any given time, a <code>rippled</code> instance has an in-progress "current" open ledger, plus some number of closed ledgers that have not yet been approved by consensus, and any number of historical ledgers that have been validated by consensus. Only the validated ledgers are certain to be accurate and immutable.</p>
@@ -969,4 +997,6 @@
 <p>When processing a multi-signed transaction, the server dereferences the <code>Account</code> values with respect to the ledger at the time of transaction execution. If the address <em>does not</em> correspond to a funded <a href="#accountroot">AccountRoot node</a>, then only the master secret associated with that address can be used to produce a valid signature. If the account <em>does</em> exist in the ledger, then it depends on the state of that account. If the account has a Regular Key configured, the Regular Key can be used. The account's master key can only be used if it is not disabled. A multi-signature cannot be used as a component of another multi-signature.</p>
 <h3 id="signerlists-and-reserves">SignerLists and Reserves</h3>
 <p>A SignerList contributes to its owner's <a href="https://ripple.com/build/reserves/">reserve requirement</a>. The SignerList itself counts as two objects, and each member of the list counts as one. As a result, the total owner reserve associated with a SignerList is anywhere from 3 times to 10 times the reserve required by a single trust line (<a href="#ripplestate">RippleState</a>) or <a href="#offer">Offer</a> node in the ledger.</p>
+    </div>
+  </main>
 </div>
